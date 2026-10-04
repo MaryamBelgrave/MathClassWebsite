@@ -38,27 +38,30 @@ window.CONTENT = {
     maxAnnouncements: 4,
 
     contact: {
-      email: "",          // PLACEHOLDER: your school email, like "name@school.org"
-      classDojo: true,    // PLACEHOLDER: true if families can message you on ClassDojo, false if not
+      email: "ebarbee@panamcs.org",
+      phone: "215-550-1935",   // Google Voice work number
+      classDojo: false,        // PLACEHOLDER: set to true if families can message you on ClassDojo
       replyTime: {
+        // TODO: made-up reply time. Change it to what's true for you.
         en: "I reply within one school day. If you write on the weekend, I'll answer on Monday.",
         es: "Respondo en un día escolar o menos. Si me escribe el fin de semana, le contesto el lunes."
       },
       preferred: {
-        // PLACEHOLDER: say how you like to be reached.
-        en: "ClassDojo is the fastest way to reach me. You can write in English or Spanish.",
-        es: "ClassDojo es la forma más rápida de comunicarse conmigo. Puede escribirme en español o en inglés."
-        // TODO(es): only keep "en español" if you or a colleague can read Spanish messages.
+        // PLACEHOLDER: say how you like to be reached (call, text, or email).
+        en: "Email is the best way to reach me. You can also call or text my school number. You can write in English or Spanish.",
+        es: "El correo electrónico es la mejor forma de comunicarse conmigo. También puede llamar o enviar un mensaje de texto a mi número de la escuela. Puede escribirme en español o en inglés."
+        // TODO(es): only keep "in Spanish" if you or a colleague can read Spanish messages.
+        // TODO: confirm the number takes texts.
       }
     },
 
     school: {
       name: "Pan American Academy Charter School",
-      address: "[School address]",       // PLACEHOLDER
-      phone: "[School phone]",           // PLACEHOLDER
+      address: "2830 North American Street, Philadelphia, PA 19133",
+      phone: "215-425-1212",   // main school office
       hours: { en: "[School hours]", es: "[Horario de la escuela]" },  // PLACEHOLDER
-      website: "",                       // PLACEHOLDER: school website link
-      calendar: ""                       // PLACEHOLDER: school calendar link
+      website: "https://panamcs.org/",
+      calendar: "https://panamcs.org/wp-content/uploads/2026/08/2026-2027-PAACS-Academic-Calendar-Board-Approved-1-1.pdf"   // 2026-2027 academic calendar (PDF)
     },
 
     // Links used in more than one place.
@@ -355,7 +358,7 @@ window.CONTENT = {
         {
           number: 6,
           title: { en: "Foundations to Geometry in the Coordinate Plane", es: "Bases de geometría en el plano de coordenadas" },
-          start: "2027-05-10", end: "2027-06-11",
+          start: "2027-05-10", end: "2027-06-16",
           bigIdea: {
             en: "A coordinate plane uses two number lines to name an exact spot. We use it to graph patterns and shapes.",
             es: "El plano de coordenadas usa dos rectas numéricas para nombrar un punto exacto. Lo usamos para graficar patrones y figuras."
@@ -565,7 +568,7 @@ window.CONTENT = {
         {
           number: 6,
           title: { en: "Statistics", es: "Estadística" },
-          start: "2027-05-24", end: "2027-06-11",
+          start: "2027-05-24", end: "2027-06-16",
           bigIdea: {
             en: "Data tells a story. We find the center and the spread of a data set to describe it.",
             es: "Los datos cuentan una historia. Hallamos el centro y la dispersión de un conjunto de datos para describirlo."
@@ -599,15 +602,12 @@ window.CONTENT = {
       { en: "Your Eureka Math² Learn book", es: "Tu libro Learn de Eureka Math²" }
     ],
     grading: [
-      { label: { en: "Classwork and exit tickets", es: "Trabajo en clase y boletos de salida" }, percent: 30 },
-      { label: { en: "Topic quizzes", es: "Pruebas de cada tema" }, percent: 25 },
-      { label: { en: "Module assessments", es: "Evaluaciones de cada módulo" }, percent: 30 },
-      { label: { en: "Homework", es: "Tarea" }, percent: 15 }
+      // TODO: add a line or two saying what mastery and growth mean in your class.
+      { label: { en: "Mastery", es: "Dominio" }, percent: 60 },
+      { label: { en: "Growth", es: "Crecimiento" }, percent: 40 }
+      // TODO(es): "Dominio" and "Crecimiento" are my best guesses. Check them.
     ],
-    gradingNote: {
-      en: "You can redo one topic quiz per module to show me you learned it.",
-      es: "Puedes repetir una prueba de tema por módulo para demostrar que ya lo aprendiste."
-    },
+    gradingNote: { en: "", es: "" },
     lateWork: {
       en: "Late homework is accepted until the module assessment. Turn it in, even if it's late. Something is better than nothing.",
       es: "Acepto tareas atrasadas hasta el día de la evaluación del módulo. Entrégala aunque sea tarde. Algo es mejor que nada."
@@ -616,7 +616,7 @@ window.CONTENT = {
       { en: "Use the Homework help page on this site.", es: "Usa la página de Ayuda con la tarea de este sitio." },
       { en: "Ask a classmate first. Then ask me.", es: "Pregúntale primero a un compañero. Después pregúntame a mí." },
       { en: "Come to math help on Tuesdays and Thursdays at lunch.", es: "Ven a la ayuda de matemáticas los martes y jueves a la hora del almuerzo." },
-      { en: "Families can reach me on ClassDojo.", es: "Las familias pueden comunicarse conmigo por ClassDojo." }
+      { en: "Families can reach me by email or phone.", es: "Las familias pueden comunicarse conmigo por correo electrónico o teléfono." }
     ]
   },
 
@@ -645,8 +645,8 @@ window.CONTENT = {
      importantDates: shows on the Schedule page. No-school days show up there too.
      ---------------------------------------------------------- */
   schedule: {
-    firstDay: "2026-08-31",   // SAMPLE
-    lastDay: "2027-06-11",    // SAMPLE
+    firstDay: "2026-08-31",   // from the school calendar
+    lastDay: "2027-06-16",    // from the school calendar
     calendar: "",             // PLACEHOLDER: school calendar link (or leave "" to use the one in site.school)
 
     periodNames: {
@@ -682,7 +682,8 @@ window.CONTENT = {
         ]
       },
       early: {
-        name: { en: "Early dismissal", es: "Salida temprano" },
+        name: { en: "12 PM dismissal", es: "Salida a las 12 p. m." },
+        // SAMPLE: the 12 PM dismissal is real. The period times are placeholders.
         periods: [
           { id: "arrival",   start: "07:45", end: "08:00" },
           { id: "homeroom",  start: "08:00", end: "08:05" },
@@ -692,8 +693,7 @@ window.CONTENT = {
           { id: "p4",        start: "09:59", end: "10:34" },
           { id: "p5",        start: "10:37", end: "11:12" },
           { id: "p6",        start: "11:15", end: "11:50" },
-          { id: "lunch",     start: "11:50", end: "12:20" },
-          { id: "dismissal", start: "12:20", end: "12:30" }
+          { id: "dismissal", start: "11:50", end: "12:00" }
         ]
       },
       delayed: {
@@ -712,17 +712,38 @@ window.CONTENT = {
       }
     },
 
+    // From the 2026-2027 school calendar. Use date for one day, or start and end for a range.
+    // grade: "6" means only that grade has the day. Leave grade out if both grades do.
     specialDays: [
-      { date: "2026-10-09", type: "early" },   // SAMPLE
-      { date: "2026-11-25", type: "early" }    // SAMPLE
+      { date: "2026-10-30", type: "early" },
+      { date: "2026-11-03", type: "early" },
+      { date: "2026-11-25", type: "early" },
+      { date: "2026-12-04", type: "early" },
+      { start: "2026-12-16", end: "2026-12-18", type: "early" },
+      { date: "2027-01-29", type: "early" },
+      { date: "2027-02-26", type: "early" },
+      { start: "2027-03-17", end: "2027-03-19", type: "early" },
+      { start: "2027-04-28", end: "2027-05-04", type: "early", grade: "6" },
+      { date: "2027-05-28", type: "early" },
+      { date: "2027-06-11", type: "early" },
+      { start: "2027-06-14", end: "2027-06-16", type: "early" }
     ],
 
+    // Days with no school for students, from the school calendar.
     noSchoolDates: [
-      // SAMPLE: check these against the school calendar.
-      { date: "2026-10-12", en: "No school: Indigenous Peoples' Day", es: "No hay clases: Día de los Pueblos Indígenas" },
-      { date: "2026-11-03", en: "No school: Election Day", es: "No hay clases: Día de Elecciones" },
-      { start: "2026-11-26", end: "2026-11-27", en: "No school: Thanksgiving break", es: "No hay clases: feriado de Acción de Gracias" },
-      { start: "2026-12-23", end: "2027-01-01", en: "No school: Winter break", es: "No hay clases: vacaciones de invierno" }
+      { date: "2026-10-12", en: "No school for students", es: "No hay clases para los estudiantes" },
+      { date: "2026-11-11", en: "No school: Veterans Day", es: "No hay clases: Día de los Veteranos" },
+      { start: "2026-11-26", end: "2026-11-27", en: "No school: Thanksgiving break", es: "No hay clases: vacaciones de Acción de Gracias" },
+      { start: "2026-12-21", end: "2027-01-01", en: "No school: Winter break", es: "No hay clases: vacaciones de invierno" },
+      { date: "2027-01-15", en: "No school for students", es: "No hay clases para los estudiantes" },
+      { date: "2027-01-18", en: "No school: MLK Day", es: "No hay clases: Día de Martin Luther King Jr." },
+      { date: "2027-02-15", en: "No school: Presidents' Day", es: "No hay clases: Día de los Presidentes" },
+      { date: "2027-03-10", en: "No school: Eid al-Fitr", es: "No hay clases: Eid al-Fitr" },
+      { start: "2027-03-22", end: "2027-03-26", en: "No school: Spring break", es: "No hay clases: vacaciones de primavera" },
+      { date: "2027-04-16", en: "No school for students", es: "No hay clases para los estudiantes" },
+      { date: "2027-05-14", en: "No school for students", es: "No hay clases para los estudiantes" },
+      { date: "2027-05-17", en: "No school: Eid al-Adha", es: "No hay clases: Eid al-Adha" },
+      { date: "2027-05-31", en: "No school: Memorial Day", es: "No hay clases: Día de los Caídos" }
     ],
 
     subjects: {
@@ -745,13 +766,13 @@ window.CONTENT = {
     // How many upcoming dates to show.
     showDates: 8,
 
+    // Early dismissal and no-school days show up on their own. Add anything else here.
     importantDates: [
-      // SAMPLE
-      { date: "2026-10-09", en: "Early dismissal at 12:30", es: "Salida temprano a las 12:30" },
-      { date: "2026-10-21", en: "Progress reports go home", es: "Se envían los informes de progreso a casa" },
-      { date: "2026-10-29", en: "Family conferences", es: "Reuniones con las familias" },
-      { date: "2026-11-20", en: "End of the first marking period", es: "Fin del primer periodo de calificaciones" },
-      { date: "2026-11-25", en: "Early dismissal at 12:30", es: "Salida temprano a las 12:30" }
+      // From the school calendar. TODO(es): have a Spanish speaker check these.
+      { date: "2026-12-16", en: "Report card conferences (Dec 16 and 17)", es: "Reuniones sobre las boletas de calificaciones (16 y 17 de dic.)" },
+      { date: "2027-03-17", en: "Report card conferences (Mar 17 and 18)", es: "Reuniones sobre las boletas de calificaciones (17 y 18 de mar.)" },
+      { date: "2027-04-28", en: "PSSA testing, grades 3 to 8 (Apr 28 to May 4)", es: "Exámenes PSSA, grados 3 a 8 (del 28 de abr. al 4 de may.)" },
+      { date: "2027-06-16", en: "Last day for students", es: "Último día de clases" }
     ]
   },
 

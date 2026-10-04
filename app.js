@@ -267,7 +267,7 @@
     if (ns) return { school: false, reason: has(ns) ? L(ns) : t('noSchool') };
     var wd = parseDate(date).getUTCDay();
     if (wd === 0 || wd === 6) return { school: false, reason: t('weekend') };
-    var sp = arr(sched.specialDays).filter(function (s) { return s.date === date && dayTypes[s.type]; })[0];
+    var sp = arr(sched.specialDays).filter(function (s) { return inRange(date, s) && dayTypes[s.type] && (!s.grade || String(s.grade) === state.grade); })[0];
     var type = sp ? sp.type : defaultType();
     return type ? { school: true, type: type } : { school: false, reason: t('noSchool') };
   }
@@ -644,7 +644,7 @@
       nextTxt = nextDayText();
     }
 
-    var typeName = info.school && dayTypes[info.type] && has(dayTypes[info.type].name) ? ' ' + L(dayTypes[info.type].name) + '.' : '';
+    var typeName = info.school && dayTypes[info.type] && has(dayTypes[info.type].name) ? ' ' + L(dayTypes[info.type].name).replace(/\.$/, '') + '.' : '';
     var mathTag = '<span class="tag tag-here">' + icon('star') + T('mathWith', { teacher: L(site.teacher) }) + '</span>';
     return '<section class="nownext" aria-labelledby="nn-h"><h2 id="nn-h" class="sr-only">' + T('nowNext') + '</h2>' +
       '<p class="nn-today">' + icon('calendar') + '<span>' + T('todayIs', { day: fmtDate(n.date, 'long') }) + esc(typeName) + '</span></p>' +
@@ -719,6 +719,13 @@
     arr(sched.noSchoolDates).forEach(function (d) {
       var start = isDate(d.date) ? d.date : d.start;
       if (isDate(start)) dates.push({ date: start, end: isDate(d.end) && d.end !== start ? d.end : '', text: has(d) ? L(d) : t('noSchool'), off: true });
+    });
+    // Early dismissal and delayed opening days show up here automatically.
+    arr(sched.specialDays).forEach(function (sp) {
+      var start = isDate(sp.date) ? sp.date : sp.start;
+      var nm = dayTypes[sp.type] && has(dayTypes[sp.type].name) ? L(dayTypes[sp.type].name) : '';
+      if (!isDate(start) || !nm || (sp.grade && String(sp.grade) !== state.grade)) return;
+      dates.push({ date: start, end: isDate(sp.end) && sp.end !== start ? sp.end : '', text: nm, off: false });
     });
     dates = dates.filter(function (d) { return (d.end || d.date) >= n.date; })
       .sort(function (a, b) { return a.date < b.date ? -1 : a.date > b.date ? 1 : 0; })
@@ -846,6 +853,8 @@
     var email = String(contact.email || '').trim();
     html += '<li><span class="c-label">' + icon('mail') + T('email') + '</span>' +
       (/^[^\s@]+@[^\s@]+$/.test(email) ? '<a href="mailto:' + esc(email) + '">' + esc(email) + '</a>' : '<span class="soon">' + T('comingSoon') + '</span>') + '</li>';
+    var cp = String(contact.phone || '').trim(), cd = cp.replace(/[^\d+]/g, '');
+    if (cp) html += '<li><span class="c-label">' + icon('phone') + T('phone') + '</span>' + (cd.length >= 10 ? '<a href="tel:' + esc(cd) + '">' + esc(cp) + '</a>' : '<span>' + esc(cp) + '</span>') + '</li>';
     if (contact.classDojo === true) html += '<li><span class="c-label">' + icon('chat') + T('classDojo') + '</span><span>' + T('classDojoNote') + '</span></li>';
     html += '</ul>';
     if (has(contact.replyTime)) html += '<p class="note">' + esc(L(contact.replyTime)) + '</p>';
