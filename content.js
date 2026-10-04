@@ -40,18 +40,16 @@ window.CONTENT = {
     contact: {
       email: "ebarbee@panamcs.org",
       phone: "215-550-1935",   // Google Voice work number
-      classDojo: false,        // PLACEHOLDER: set to true if families can message you on ClassDojo
+      classDojo: true,         // The school uses ClassDojo for classroom messages. TODO: confirm you use it with families.
       replyTime: {
-        // TODO: made-up reply time. Change it to what's true for you.
-        en: "I reply within one school day. If you write on the weekend, I'll answer on Monday.",
-        es: "Respondo en un día escolar o menos. Si me escribe el fin de semana, le contesto el lunes."
+        // From the school handbook: allow 24 hours. Urgent matters go to the main office.
+        en: "I reply within 24 hours on school days. For an emergency, call the main office at 215-425-1212.",
+        es: "Respondo en un plazo de 24 horas en días de clases. En una emergencia, llame a la oficina principal al 215-425-1212."
       },
       preferred: {
-        // PLACEHOLDER: say how you like to be reached (call, text, or email).
-        en: "Email is the best way to reach me. You can also call or text my school number. You can write in English or Spanish.",
-        es: "El correo electrónico es la mejor forma de comunicarse conmigo. También puede llamar o enviar un mensaje de texto a mi número de la escuela. Puede escribirme en español o en inglés."
+        en: "ClassDojo and email are the best ways to reach me. You can also call or text my school number. You can write in English or Spanish.",
+        es: "ClassDojo y el correo electrónico son las mejores formas de comunicarse conmigo. También puede llamar o enviar un mensaje de texto a mi número de la escuela. Puede escribirme en español o en inglés."
         // TODO(es): only keep "in Spanish" if you or a colleague can read Spanish messages.
-        // TODO: confirm the number takes texts.
       }
     },
 
@@ -59,7 +57,8 @@ window.CONTENT = {
       name: "Pan American Academy Charter School",
       address: "2830 North American Street, Philadelphia, PA 19133",
       phone: "215-425-1212",   // main school office
-      hours: { en: "[School hours]", es: "[Horario de la escuela]" },  // PLACEHOLDER
+      // From the handbook: gates open 7:50 AM, close 8:15 AM. Instruction ends 3:15 PM.
+      hours: { en: "Gates open at 7:50 AM. School day ends at 3:15 PM.", es: "Las puertas abren a las 7:50 a. m. El día escolar termina a las 3:15 p. m." },
       website: "https://panamcs.org/",
       calendar: "https://panamcs.org/wp-content/uploads/2026/08/2026-2027-PAACS-Academic-Calendar-Board-Approved-1-1.pdf"   // 2026-2027 academic calendar (PDF)
     },
@@ -598,7 +597,7 @@ window.CONTENT = {
     materials: [
       { en: "Pencil with an eraser", es: "Lápiz con borrador" },
       { en: "Math notebook (I'll give you one)", es: "Cuaderno de matemáticas (yo te doy uno)" },
-      { en: "Charged Chromebook", es: "Chromebook con batería cargada" },
+      { en: "Your school device, charged (at least 75%)", es: "Tu dispositivo de la escuela, cargado (al menos 75%)" },   // TODO: the handbook says iPads. Change to Chromebook if that's what you use.
       { en: "Your Eureka Math² Learn book", es: "Tu libro Learn de Eureka Math²" }
     ],
     grading: [
@@ -607,15 +606,21 @@ window.CONTENT = {
       { label: { en: "Growth", es: "Crecimiento" }, percent: 40 }
       // TODO(es): "Dominio" and "Crecimiento" are my best guesses. Check them.
     ],
-    gradingNote: { en: "", es: "" },
+    gradingNote: {
+      // From the school handbook, the same scale for every subject.
+      en: "School grading scale: Advanced 93 to 100. Proficient 80 to 92. Basic 66 to 79. Below Basic 0 to 65.",
+      es: "Escala de calificaciones de la escuela: Avanzado 93 a 100. Competente 80 a 92. Básico 66 a 79. Por debajo del nivel básico 0 a 65."
+      // TODO(es): check the Spanish level names against the school's Spanish handbook.
+    },
     lateWork: {
-      en: "Late homework is accepted until the module assessment. Turn it in, even if it's late. Something is better than nothing.",
-      es: "Acepto tareas atrasadas hasta el día de la evaluación del módulo. Entrégala aunque sea tarde. Algo es mejor que nada."
+      // TODO: check this against what you do. It follows the school handbook: homework is usually Monday to Thursday.
+      en: "Homework is usually Monday to Thursday. If you miss school, ask me what you missed and we'll set a time for quizzes and tests. If homework isn't done, I'll let your family know and we'll make a plan.",
+      es: "La tarea suele ser de lunes a jueves. Si faltas a la escuela, pregúntame qué te perdiste y fijaremos un día para las pruebas y los exámenes. Si la tarea no está hecha, aviso a tu familia y hacemos un plan juntos."
     },
     help: [
       { en: "Use the Homework help page on this site.", es: "Usa la página de Ayuda con la tarea de este sitio." },
       { en: "Ask a classmate first. Then ask me.", es: "Pregúntale primero a un compañero. Después pregúntame a mí." },
-      { en: "Come to math help on Tuesdays and Thursdays at lunch.", es: "Ven a la ayuda de matemáticas los martes y jueves a la hora del almuerzo." },
+      { en: "Use W.I.N. time (What I Need) to get help or catch up.", es: "Usa el tiempo de W.I.N. (Lo que necesito) para pedir ayuda o ponerte al día." },
       { en: "Families can reach me by email or phone.", es: "Las familias pueden comunicarse conmigo por correo electrónico o teléfono." }
     ]
   },
@@ -650,64 +655,51 @@ window.CONTENT = {
     calendar: "",             // PLACEHOLDER: school calendar link (or leave "" to use the one in site.school)
 
     periodNames: {
-      arrival:   { en: "Arrival and breakfast", es: "Llegada y desayuno" },
       homeroom:  { en: "Homeroom", es: "Salón hogar" },   // TODO(es): or "Tutoría"? Use what your school says.
       p1:        { en: "Period 1", es: "Periodo 1" },
       p2:        { en: "Period 2", es: "Periodo 2" },
+      win:       { en: "W.I.N.", es: "W.I.N." },
       p3:        { en: "Period 3", es: "Periodo 3" },
       p4:        { en: "Period 4", es: "Periodo 4" },
+      lunch:     { en: "Lunch", es: "Almuerzo" },
       p5:        { en: "Period 5", es: "Periodo 5" },
-      p6:        { en: "Period 6", es: "Periodo 6" },
-      lunch:     { en: "Lunch and recess", es: "Almuerzo y recreo" },
+      specials:  { en: "Specials", es: "Especiales" },
+      community: { en: "Community meeting", es: "Reunión comunitaria" },
       dismissal: { en: "Dismissal", es: "Salida" }
     },
 
     defaultDayType: "regular",
 
-    // PLACEHOLDER: SAMPLE bell schedules. Replace with your real times.
+    // Bell schedules from the "Schedules 5/6th Grade" PDF. An id has to match a name in periodNames.
     dayTypes: {
       regular: {
         name: { en: "Regular day", es: "Día normal" },
         periods: [
-          { id: "arrival",   start: "07:45", end: "08:00" },
-          { id: "homeroom",  start: "08:00", end: "08:10" },
-          { id: "p1",        start: "08:10", end: "09:05" },
-          { id: "p2",        start: "09:08", end: "10:03" },
-          { id: "p3",        start: "10:06", end: "11:01" },
-          { id: "lunch",     start: "11:04", end: "11:44" },
-          { id: "p4",        start: "11:47", end: "12:42" },
-          { id: "p5",        start: "12:45", end: "13:40" },
-          { id: "p6",        start: "13:43", end: "14:38" },
-          { id: "dismissal", start: "14:38", end: "14:45" }
+          { id: "homeroom",  start: "08:00", end: "08:25" },
+          { id: "p1",        start: "08:27", end: "09:17" },
+          { id: "p2",        start: "09:19", end: "10:09" },
+          { id: "win",       start: "10:11", end: "11:01" },
+          { id: "p3",        start: "11:03", end: "11:53" },
+          { id: "p4",        start: "11:55", end: "12:45" },
+          { id: "lunch",     start: "12:45", end: "13:30" },
+          { id: "p5",        start: "13:30", end: "14:20" },
+          { id: "specials",  start: "14:25", end: "15:15" },
+          { id: "dismissal", start: "15:15", end: "15:30" }
         ]
       },
       early: {
         name: { en: "12 PM dismissal", es: "Salida a las 12 p. m." },
-        // SAMPLE: the 12 PM dismissal is real. The period times are placeholders.
+        // TODO: this half-day schedule is from the 6B page. Send me the 5th grade one if it's different.
         periods: [
-          { id: "arrival",   start: "07:45", end: "08:00" },
-          { id: "homeroom",  start: "08:00", end: "08:05" },
-          { id: "p1",        start: "08:05", end: "08:40" },
-          { id: "p2",        start: "08:43", end: "09:18" },
-          { id: "p3",        start: "09:21", end: "09:56" },
-          { id: "p4",        start: "09:59", end: "10:34" },
-          { id: "p5",        start: "10:37", end: "11:12" },
-          { id: "p6",        start: "11:15", end: "11:50" },
-          { id: "dismissal", start: "11:50", end: "12:00" }
-        ]
-      },
-      delayed: {
-        name: { en: "Delayed opening", es: "Entrada tarde" },
-        periods: [
-          { id: "arrival",   start: "09:45", end: "10:00" },
-          { id: "p1",        start: "10:00", end: "10:35" },
-          { id: "p2",        start: "10:38", end: "11:13" },
-          { id: "p3",        start: "11:16", end: "11:51" },
-          { id: "lunch",     start: "11:54", end: "12:34" },
-          { id: "p4",        start: "12:37", end: "13:12" },
-          { id: "p5",        start: "13:15", end: "13:50" },
-          { id: "p6",        start: "13:53", end: "14:38" },
-          { id: "dismissal", start: "14:38", end: "14:45" }
+          { id: "homeroom",  start: "08:00", end: "08:15" },
+          { id: "p1",        start: "08:15", end: "08:45" },
+          { id: "p2",        start: "08:45", end: "09:15" },
+          { id: "p3",        start: "09:15", end: "09:45" },
+          { id: "p4",        start: "09:45", end: "10:15" },
+          { id: "p5",        start: "10:15", end: "10:30" },
+          { id: "lunch",     start: "10:30", end: "11:00" },
+          { id: "community", start: "11:05", end: "11:55" },
+          { id: "dismissal", start: "11:55", end: "12:00" }
         ]
       }
     },
@@ -746,21 +738,114 @@ window.CONTENT = {
       { date: "2027-05-31", en: "No school: Memorial Day", es: "No hay clases: Día de los Caídos" }
     ],
 
+    // Class names. mathSubject is the one that gets highlighted. A period with math: true is highlighted too.
     subjects: {
-      math:     { en: "Math", es: "Matemáticas" },
-      ela:      { en: "English Language Arts", es: "Lectura y escritura en inglés" },  // TODO(es): check
-      science:  { en: "Science", es: "Ciencias" },
-      social:   { en: "Social Studies", es: "Estudios Sociales" },
-      specials: { en: "Specials (art, music, gym)", es: "Especiales (arte, música, educación física)" }
+      math:       { en: "Math", es: "Matemáticas" },
+      ela:        { en: "English Language Arts", es: "Artes del lenguaje en inglés" },   // TODO(es): check
+      sla:        { en: "Spanish Language Arts", es: "Artes del lenguaje en español" }, // TODO(es): check
+      science:    { en: "Science", es: "Ciencias" },
+      ins:        { en: "Social Studies (I&S)", es: "Estudios Sociales (I&S)" },
+      win:        { en: "W.I.N. (What I Need)", es: "W.I.N. (Lo que necesito)" },        // TODO(es): check
+      homeroom:   { en: "Homeroom", es: "Salón hogar" },
+      community:  { en: "Community meeting", es: "Reunión comunitaria" },
+      specials:   { en: "Specials", es: "Especiales" },
+      music:      { en: "Music", es: "Música" },
+      gym:        { en: "Gym", es: "Educación física" },
+      thinquiry:  { en: "Thinquiry", es: "Thinquiry" },
+      service:    { en: "Service Learning", es: "Aprendizaje de servicio" },            // TODO(es): check
+      art:        { en: "Art", es: "Arte" }
     },
     mathSubject: "math",
 
-    // PLACEHOLDER: SAMPLE sections. grade must be "5" or "6".
+    // Each class section and what it has each period. Only section names, never student names.
+    // A period can be just a subject ("math") or { subject, teacher, room }.
+    // Specials have one entry for each weekday (mon to fri).
+    // byDayType: classes for a different bell schedule. Left out means "coming soon" on that day.
     sections: [
-      { id: "5-201", grade: "5", periods: { homeroom: "", p1: "math", p2: "ela", p3: "ela", p4: "science", p5: "specials", p6: "social" } },
-      { id: "5-202", grade: "5", periods: { p1: "ela", p2: "ela", p3: "math", p4: "specials", p5: "science", p6: "social" } },
-      { id: "6-301", grade: "6", periods: { p1: "science", p2: "social", p3: "specials", p4: "math", p5: "ela", p6: "ela" } },
-      { id: "6-302", grade: "6", periods: { p1: "specials", p2: "science", p3: "social", p4: "ela", p5: "ela", p6: "math" } }
+      { id: "5A", grade: "5", homeroom: "Mr. Emilio",
+        periods: {
+        homeroom: { subject: "homeroom", teacher: "Mr. Emilio", room: "222" },
+        p1: { subject: "science", teacher: "Mr. Emilio", room: "222" },
+        p2: { subject: "ins", teacher: "Mrs. Martinez", room: "222" },
+        win: { subject: "win", teacher: "Mr. Emilio", room: "222" },
+        p3: { subject: "math", teacher: "Mrs. Barbee", room: "314" },
+        p4: { subject: "sla", teacher: "Ms. Padilla", room: "313" },
+        p5: { subject: "ela", teacher: "Mr. Perez", room: "201" },
+        specials: {
+          mon: { subject: "art", teacher: "Ms. Chambers", room: "225" },
+          tue: { subject: "music", teacher: "Ms. Yen", room: { en: "Music Room", es: "Salón de música" } },
+          wed: { subject: "gym", teacher: "Mr. Bonilla", room: { en: "Annex", es: "Anexo" } },
+          thu: { subject: "thinquiry", teacher: "Ms. Donelly", room: { en: "Modular", es: "Modular" } },
+          fri: { subject: "service", teacher: "Mr. Williams", room: "201" }
+        }
+        }
+      },
+      { id: "5B", grade: "5", homeroom: "Mr. Perez",
+        periods: {
+        homeroom: { subject: "homeroom", teacher: "Mr. Perez", room: "201" },
+        p1: { subject: "ins", teacher: "Mrs. Martinez", room: "201" },
+        p2: { subject: "math", teacher: "Mrs. Barbee", room: "314" },
+        win: { subject: "win", teacher: "Mrs. Barbee", room: "314", math: true },
+        p3: { subject: "ela", teacher: "Mr. Perez", room: "201" },
+        p4: { subject: "science", teacher: "Mr. Emilio", room: "222" },
+        p5: { subject: "sla", teacher: "Ms. Padilla", room: "313" },
+        specials: {
+          mon: { subject: "service", teacher: "Mr. Williams", room: "313" },
+          tue: { subject: "art", teacher: "Ms. Chambers", room: "225" },
+          wed: { subject: "music", teacher: "Ms. Yen", room: { en: "Music Room", es: "Salón de música" } },
+          thu: { subject: "gym", teacher: "Mr. Bonilla", room: { en: "Annex", es: "Anexo" } },
+          fri: { subject: "thinquiry", teacher: "Ms. Donelly", room: { en: "Modular", es: "Modular" } }
+        }
+        }
+      },
+      { id: "5C", grade: "5", homeroom: "Mrs. Barbee",
+        periods: {
+        homeroom: { subject: "homeroom", teacher: "Mrs. Barbee", room: "314" },
+        p1: { subject: "math", teacher: "Mrs. Barbee", room: "314" },
+        p2: { subject: "sla", teacher: "Ms. Padilla", room: "313" },
+        win: { subject: "win", teacher: "Ms. Padilla", room: "313" },
+        p3: { subject: "ins", teacher: "Mrs. Martinez", room: "313" },
+        p4: { subject: "ela", teacher: "Mr. Perez", room: "201" },
+        p5: { subject: "science", teacher: "Mr. Emilio", room: "222" },
+        specials: {
+          mon: { subject: "gym", teacher: "Mr. Bonilla", room: { en: "Annex", es: "Anexo" } },
+          tue: { subject: "thinquiry", teacher: "Ms. Donelly", room: { en: "Modular", es: "Modular" } },
+          wed: { subject: "service", teacher: "Mr. Williams", room: "222" },
+          thu: { subject: "art", teacher: "Ms. Chambers", room: "225" },
+          fri: { subject: "music", teacher: "Ms. Yen", room: { en: "Music Room", es: "Salón de música" } }
+        }
+        }
+      },
+      { id: "6B", grade: "6", homeroom: "Ms. Padilla",
+        periods: {
+        homeroom: { subject: "homeroom", teacher: "Ms. Padilla", room: "313" },
+        p1: { subject: "sla", teacher: "Ms. Padilla", room: "313" },
+        p2: { subject: "ela", teacher: "Mr. Perez", room: "201" },
+        win: { subject: "win", teacher: "Mr. Perez", room: "201" },
+        p3: { subject: "science", teacher: "Mr. Emilio", room: "222" },
+        p4: { subject: "math", teacher: "Mrs. Barbee", room: "314" },
+        p5: { subject: "ins", teacher: "Mrs. Martinez", room: "314" },
+        specials: {
+          mon: { subject: "music", teacher: "Ms. Yen", room: { en: "Music Room", es: "Salón de música" } },
+          tue: { subject: "gym", teacher: "Mr. Bonilla", room: { en: "Gym", es: "Gimnasio" } },
+          wed: { subject: "thinquiry", teacher: "Ms. Donelly", room: { en: "Modular", es: "Modular" } },
+          thu: { subject: "service", teacher: "Mr. Williams", room: "314" },
+          fri: { subject: "art", teacher: "Ms. Chambers", room: "225" }
+        }
+        },
+        // Half-day schedule (12 PM dismissal). Same classes, shorter periods.
+        byDayType: {
+          early: {
+            homeroom:  { subject: "homeroom", teacher: "Ms. Padilla", room: "313" },
+            p1:        { subject: "ins", teacher: "Mrs. Martinez", room: "313" },
+            p2:        { subject: "science", teacher: "Mr. Emilio", room: "313" },
+            p3:        { subject: "ela", teacher: "Mr. Perez", room: "313" },
+            p4:        { subject: "math", teacher: "Mrs. Barbee", room: "313" },
+            p5:        { subject: "sla", teacher: "Ms. Padilla", room: "313" },
+            community: { subject: "community", teacher: "Ms. Padilla", room: { en: "Annex", es: "Anexo" } }
+          }
+        }
+      }
     ],
 
     // How many upcoming dates to show.
@@ -783,7 +868,7 @@ window.CONTENT = {
      inStock: true or false. image is optional. If you add one, add alt text too.
      ---------------------------------------------------------- */
   store: {
-    currency: { en: "Dojo points", es: "puntos de Dojo" },  // PLACEHOLDER
+    currency: { en: "Dojo points", es: "puntos de Dojo" },  // The school gives ClassDojo points and runs school stores.
     hours: {
       en: "SAMPLE: Fridays, the last 10 minutes of math class.",
       es: "SAMPLE: Los viernes, en los últimos 10 minutos de la clase de matemáticas."
@@ -836,6 +921,43 @@ window.CONTENT = {
       { en: "Look at the Homework help page together.", es: "Miren juntos la página de Ayuda con la tarea." },
       { en: "15 to 20 minutes of focused homework is enough. If it takes much longer, send me a note.", es: "De 15 a 20 minutos de tarea con concentración es suficiente. Si tarda mucho más, envíeme una nota." }
     ],
+    // School information for families, from panamcs.org and the 2026-27 Student & Family Handbook.
+    // title and text need en and es. Check the Spanish against the school's Spanish handbook.
+    policies: [
+      { title: { en: "Arrival", es: "Llegada" },
+        text: { en: "Gates open at 7:50 AM and close at 8:15 AM. Students in grades 5 to 8 come in through the American Street gate and go to the cafeteria. If you arrive after 8:15 AM, use the Main Entrance and get a late pass.",
+                es: "Las puertas abren a las 7:50 a. m. y cierran a las 8:15 a. m. Los estudiantes de 5.º a 8.º grado entran por la puerta de la calle American y van a la cafetería. Si llega después de las 8:15 a. m., use la entrada principal y pida un pase de tardanza." } },
+      { title: { en: "Dismissal", es: "Salida" },
+        text: { en: "The school day ends at 3:15 PM. Students in grades 5 to 8 leave through the Front Entrance or the Small Gate on their own, unless you have set up something different with the school.",
+                es: "El día escolar termina a las 3:15 p. m. Los estudiantes de 5.º a 8.º grado salen solos por la entrada principal o por la puerta pequeña, a menos que usted haya acordado otra cosa con la escuela." } },
+      { title: { en: "Absences", es: "Ausencias" },
+        text: { en: "Call the main office if your child will be absent. Send an excuse note within 3 school days of their return. Family vacations are not excused absences.",
+                es: "Llame a la oficina principal si su hijo o hija va a faltar. Envíe una excusa dentro de los 3 días de clases después de su regreso. Las vacaciones familiares no son una ausencia justificada." } },
+      { title: { en: "Homework", es: "Tarea" },
+        text: { en: "Homework is usually Monday to Thursday, with a daily quiet reading time. You can see assignments in the PowerSchool Parent Portal.",
+                es: "La tarea suele ser de lunes a jueves, con un tiempo diario de lectura en silencio. Puede ver las tareas en el Portal para Padres de PowerSchool." } },
+      { title: { en: "Uniform", es: "Uniforme" },
+        text: { en: "Students wear the full uniform every day. No outside jackets or hoodies. The Uniform Policy is on page 28 of the handbook.",
+                es: "Los estudiantes usan el uniforme completo todos los días. No se permiten chaquetas ni sudaderas de afuera. La política de uniforme está en la página 28 del manual." } },
+      { title: { en: "School devices", es: "Dispositivos de la escuela" },
+        text: { en: "Every student has a school device. It should come to school every day with at least 75% charge.",
+                es: "Cada estudiante tiene un dispositivo de la escuela. Debe llevarlo a la escuela todos los días con al menos 75% de carga." } },
+      { title: { en: "Meals", es: "Comidas" },
+        text: { en: "All students get breakfast and lunch at no cost.",
+                es: "Todos los estudiantes reciben desayuno y almuerzo sin costo." } }
+    ],
+
+    // Buttons on the Families page. Blank link shows "Coming soon".
+    links: [
+      { label: { en: "Student & Family Handbook", es: "Manual para estudiantes y familias" },
+        url: { en: "https://panamcs.org/wp-content/uploads/2026/08/26-27-PAACS-Student-Family-Handbook_final_approved20260803.docx-1.pdf",
+               es: "https://panamcs.org/wp-content/uploads/2026/08/Translated-Copy-of-26-27-PAACS-Student-Family-Handbook_final_approved20260803.docx.pdf" } },
+      { label: { en: "Absence excuse note", es: "Excusa por ausencia" }, url: "https://forms.gle/RakUsa1s3tmsR75Q6" },
+      { label: { en: "School supply list", es: "Lista de útiles escolares" }, url: "https://panamcs.org/wp-content/uploads/2026/06/2026-2027-School-Supply-List.pdf" },
+      { label: { en: "Lunch menu", es: "Menú del almuerzo" }, url: "https://panamcs.org/wp-content/uploads/2026/10/October-Menu.pdf" },   // TODO: this link changes every month
+      { label: { en: "Parent concern form", es: "Formulario de inquietudes" }, url: "https://docs.google.com/forms/d/e/1FAIpQLScOQazp20x0jB8-HtjSCkO-6hwteMv7qdw0Ubfd6Lnv5zZkIA/viewform?usp=pp_url" }
+    ],
+
     questions: [
       { en: "What did you draw?", es: "¿Qué dibujaste?" },
       { en: "How do you know?", es: "¿Cómo lo sabes?" },
@@ -860,6 +982,10 @@ window.CONTENT = {
       title_home: "This week", title_help: "Homework help", title_syllabus: "Syllabus", title_schedule: "Schedule", title_store: "Class store", title_families: "Families",
       classroom: "Google Classroom",
       comingSoon: "Coming soon",
+      roomN: "Room {n}",
+      daySoon: "Classes for this day are coming soon.",
+      schoolPolicies: "School policies",
+      schoolLinks: "School links",
       newTab: "opens in a new tab",
       gradeLabel: "Grade",
       grade5: "5th grade", grade6: "6th grade",
@@ -977,6 +1103,10 @@ window.CONTENT = {
       title_home: "Esta semana", title_help: "Ayuda con la tarea", title_syllabus: "Plan del curso", title_schedule: "Horario", title_store: "Tienda de la clase", title_families: "Familias",
       classroom: "Google Classroom",
       comingSoon: "Muy pronto",
+      roomN: "Salón {n}",
+      daySoon: "Muy pronto vas a ver aquí las clases de este día.",
+      schoolPolicies: "Reglas de la escuela",
+      schoolLinks: "Enlaces de la escuela",
       newTab: "se abre en una pestaña nueva",
       gradeLabel: "Grado",
       grade5: "5.º grado", grade6: "6.º grado",

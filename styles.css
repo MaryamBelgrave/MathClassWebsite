@@ -463,3 +463,16 @@ tr.is-now td { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--
   details { border: 0; }
   details > :not(summary) { display: block !important; }
 }
+
+/* Weekday specials inside the schedule table */
+.week { list-style: none; margin: 0; padding: 0; }
+.week li { padding: 0.25rem 0; border-bottom: 1px dashed var(--rule); max-width: none; }
+.week li:last-child { border-bottom: 0; }
+.wd { display: inline-block; min-width: 2.6rem; font-weight: 700; }
+.week .p-time { margin-left: 2.6rem; }
+
+/* School policies on the Families page */
+.policies { margin: 0 0 1rem; }
+.policies > div { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); max-width: var(--measure); }
+.policies dt { font-weight: 700; }
+.policies dd { margin: 0; }

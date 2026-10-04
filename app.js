@@ -183,6 +183,7 @@
     if (!d) return '';
     var o = style === 'long' ? { weekday: 'long', month: 'long', day: 'numeric' }
       : style === 'md' ? { month: 'short', day: 'numeric' }
+      : style === 'wd' ? { weekday: 'short' }
       : style === 'mdy' ? { month: 'long', day: 'numeric', year: 'numeric' }
       : { weekday: 'short', month: 'short', day: 'numeric' };
     o.timeZone = 'UTC';
@@ -282,17 +283,48 @@
     }).filter(function (p) { return p.start != null && p.end != null; })
       .sort(function (a, b) { return a.start - b.start; });
   }
-  function subjectFor(section, periodId) {
+  var WEEKDAYS = ['mon', 'tue', 'wed', 'thu', 'fri'];
+  var WEEKDAY_DATES = { mon: '2026-10-05', tue: '2026-10-06', wed: '2026-10-07', thu: '2026-10-08', fri: '2026-10-09' };
+  var WD_KEYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  function weekdayKey(date) { return WD_KEYS[parseDate(date).getUTCDay()]; }
+
+  // One class entry: "math", or { subject, teacher, room, math }.
+  function classOf(v) {
+    if (!v) return null;
+    var e = typeof v === 'string' ? { subject: v } : v;
+    if (!e.subject) return null;
+    var sub = obj(sched.subjects)[e.subject];
+    var room = e.room;
+    var roomTxt = '';
+    if (room && typeof room === 'object') roomTxt = L(room);
+    else if (room) roomTxt = /^\d+$/.test(String(room)) ? t('roomN', { n: room }) : String(room);
+    var bits = [];
+    if (e.teacher) bits.push(String(e.teacher));
+    if (roomTxt) bits.push(roomTxt);
+    return {
+      name: has(sub) ? L(sub) : String(e.subject),
+      detail: bits.join(', '),
+      isMath: e.subject === (sched.mathSubject || 'math') || e.math === true
+    };
+  }
+  // What a section has in a period. For specials, pass the weekday to get that day, or leave it out to get the whole week.
+  function subjectFor(section, periodId, dayType, wd) {
     if (!section) return null;
-    var key = obj(section.periods)[periodId];
-    if (!key) return null;
-    var s = obj(sched.subjects)[key];
-    return { name: has(s) ? L(s) : key, isMath: key === (sched.mathSubject || 'math') };
+    var map = obj(section.byDayType)[dayType] || (dayType === defaultType() ? section.periods : null);
+    var v = obj(map)[periodId];
+    if (!v) return null;
+    if (typeof v === 'object' && !v.subject) {
+      if (wd && v[wd]) return classOf(v[wd]);
+      var week = WEEKDAYS.filter(function (k) { return v[k]; }).map(function (k) { var c = classOf(v[k]); c.day = k; return c; });
+      var sp = obj(sched.subjects)[periodId];
+      return week.length ? { name: has(sp) ? L(sp) : periodId, detail: '', isMath: false, week: week } : null;
+    }
+    return classOf(v);
   }
   function nextSchoolDay(from) {
     for (var i = 1; i <= 120; i++) {
       var d = addDays(from, i), info = dayInfo(d);
-      if (info.school) { var ps = periodsFor(info.type); if (ps.length) return { date: d, period: ps[0] }; }
+      if (info.school) { var ps = periodsFor(info.type); if (ps.length) return { date: d, period: ps[0], type: info.type }; }
     }
     return null;
   }
@@ -606,14 +638,14 @@
     var section = findSection(state.section);
     var nowTxt = '', nextTxt = '', nowMath = false, nextMath = false;
 
-    function label(p) {
-      var s = subjectFor(section, p.id);
-      return { text: p.name + (s ? ': ' + s.name : ''), math: !!(s && s.isMath) };
+    function label(p, type, date) {
+      var s = subjectFor(section, p.id, type, weekdayKey(date));
+      return { text: p.name + (s ? ': ' + s.name + (s.detail ? ' (' + s.detail + ')' : '') : ''), math: !!(s && s.isMath) };
     }
     function nextDayText() {
       var nd = nextSchoolDay(n.date);
       if (!nd) return '';
-      var l = label(nd.period);
+      var l = label(nd.period, nd.type, nd.date);
       nextMath = l.math;
       return fmtDate(nd.date) + '. ' + l.text + ', ' + atTime(nd.period.start, 'at');
     }
@@ -625,18 +657,18 @@
         nowTxt = t('noSchool');
       } else if (n.minutes < ps[0].start) {
         nowTxt = t('beforeSchool');
-        var l0 = label(ps[0]); nextTxt = l0.text + ', ' + atTime(ps[0].start, 'at'); nextMath = l0.math;
+        var l0 = label(ps[0], info.type, n.date); nextTxt = l0.text + ', ' + atTime(ps[0].start, 'at'); nextMath = l0.math;
       } else if (n.minutes >= ps[ps.length - 1].end) {
         nowTxt = t('afterSchool');
         nextTxt = nextDayText();
       } else {
         if (cur) {
-          var lc = label(cur); nowTxt = lc.text + ', ' + atTime(cur.end, 'until'); nowMath = lc.math;
+          var lc = label(cur, info.type, n.date); nowTxt = lc.text + ', ' + atTime(cur.end, 'until'); nowMath = lc.math;
         } else {
           nowTxt = t('passing');
         }
         var np = ps.filter(function (p) { return p.start >= (cur ? cur.end : n.minutes) && p !== cur; })[0];
-        if (np) { var ln = label(np); nextTxt = ln.text + ', ' + atTime(np.start, 'at'); nextMath = ln.math; }
+        if (np) { var ln = label(np, info.type, n.date); nextTxt = ln.text + ', ' + atTime(np.start, 'at'); nextMath = ln.math; }
         else nextTxt = t('endOfDay');
       }
     } else {
@@ -671,7 +703,7 @@
       html += '<div class="pickers">' +
         '<div class="field"><label for="section-pick">' + T('yourClass') + '</label><select id="section-pick">' +
         '<option value="">' + T('pickClass') + '</option>' +
-        sections.map(function (s) { return '<option value="' + esc(s.id) + '"' + (section && s.id === section.id ? ' selected' : '') + '>' + esc(s.id) + '</option>'; }).join('') +
+        sections.map(function (s) { return '<option value="' + esc(s.id) + '"' + (section && s.id === section.id ? ' selected' : '') + '>' + esc(s.id + (s.homeroom ? ' (' + s.homeroom + ')' : '')) + '</option>'; }).join('') +
         '</select></div>' +
         (types.length > 1 ? '<div class="field"><label for="daytype-pick">' + T('dayType') + '</label><select id="daytype-pick">' +
           types.map(function (k) { return '<option value="' + esc(k) + '"' + (k === showType ? ' selected' : '') + '>' + esc(L(dayTypes[k].name) || k) + '</option>'; }).join('') +
@@ -687,14 +719,24 @@
       html += '<div class="table-wrap"><table class="day-table"><caption>' + esc(L(obj(dayTypes[showType]).name)) + '</caption><thead><tr>' +
         '<th scope="col">' + T('period') + '</th><th scope="col">' + T('classCol') + '</th></tr></thead><tbody>' +
         ps.map(function (p) {
-          var s = subjectFor(section, p.id);
+          var s = subjectFor(section, p.id, showType);
           var isNow = isToday && n.minutes >= p.start && n.minutes < p.end;
           var cls = (s && s.isMath ? 'is-math' : '') + (isNow ? ' is-now' : '');
+          var cell = '';
+          if (s && s.week) {
+            cell = '<ul class="week">' + s.week.map(function (w) {
+              return '<li><span class="wd">' + esc(fmtDate(WEEKDAY_DATES[w.day], 'wd')) + '</span> ' + esc(w.name) + (w.detail ? '<span class="p-time">' + esc(w.detail) + '</span>' : '') + '</li>';
+            }).join('') + '</ul>';
+          } else if (s) {
+            cell = esc(s.name) + (s.detail ? '<span class="p-time">' + esc(s.detail) + '</span>' : '') +
+              (s.isMath ? ' <span class="tag tag-here">' + icon('star') + T('mathWith', { teacher: L(site.teacher) }) + '</span>' : '');
+          }
           return '<tr' + (cls.trim() ? ' class="' + cls.trim() + '"' : '') + '>' +
             '<td><span class="p-name">' + esc(p.name) + '</span><span class="p-time num">' + esc(t('timeRange', { start: fmtTime(p.start), end: fmtTime(p.end) })) + '</span>' +
             (isNow ? '<span class="tag tag-now">' + icon('clock') + T('now') + '</span>' : '') + '</td>' +
-            '<td>' + (s ? esc(s.name) + (s.isMath ? ' <span class="tag tag-here">' + icon('star') + T('mathWith', { teacher: L(site.teacher) }) + '</span>' : '') : '') + '</td></tr>';
+            '<td>' + cell + '</td></tr>';
         }).join('') + '</tbody></table></div>';
+      if (!ps.some(function (p) { return subjectFor(section, p.id, showType); })) html += '<p class="meta">' + T('daySoon') + '</p>';
     } else if (sections.length) {
       html += '<p>' + T('pickClassHint') + '</p>';
     }
@@ -876,6 +918,17 @@
       '<li>' + ext(links.eurekaFamily, t('eurekaFamily'), 'btn', 'book') + '</li>' +
       '</ul></section>';
 
+    // School policies and links
+    var pol = arr(f.policies).filter(function (p) { return has(p.title) && has(p.text); });
+    if (pol.length) {
+      html += '<section aria-labelledby="pol-h"><h2 id="pol-h">' + icon('book') + '<span>' + T('schoolPolicies') + '</span></h2><dl class="policies">' +
+        pol.map(function (p) { return '<div><dt>' + esc(L(p.title)) + '</dt><dd>' + esc(L(p.text)) + '</dd></div>'; }).join('') + '</dl></section>';
+    }
+    var fl = arr(f.links).filter(function (x) { return has(x.label); });
+    if (fl.length) {
+      html += '<section aria-labelledby="fl-h"><h2 id="fl-h">' + T('schoolLinks') + '</h2><ul class="link-row">' +
+        fl.map(function (x) { return '<li>' + ext(L(x.url), L(x.label), 'btn') + '</li>'; }).join('') + '</ul></section>';
+    }
     html += '</div>';
     return html;
   }
