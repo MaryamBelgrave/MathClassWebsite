@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Page not found | Mrs. Barbee's Math</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='6' fill='%231F5F73'/%3E%3Cpath d='M6 19h20M9 15v8M16 15v8M23 15v8' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='10' r='3.5' fill='%23F0B429'/%3E%3C/svg%3E">
+  <style>
+    body { margin: 0; background: #F3F6F1; color: #1D2A30; font-family: "Atkinson Hyperlegible Next", Verdana, sans-serif; font-size: 1.125rem; line-height: 1.6; }
+    main { max-width: 40rem; margin: 0 auto; padding: 3rem 16px; }
+    h1 { font-family: Georgia, serif; font-weight: 600; font-size: 2rem; line-height: 1.2; margin: 0 0 1rem; }
+    .es { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #C9D3CD; }
+    a { display: inline-flex; align-items: center; min-height: 44px; padding: 0.4rem 1rem; border-radius: 6px; background: #1F5F73; color: #fff; font-weight: 700; text-decoration: none; }
+    a:hover { background: #174A5A; }
+    a:focus-visible { outline: 3px solid #1D2A30; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>This page wandered off.</h1>
+    <p>The link might be old or have a typo.</p>
+    <p><a href="./" data-home>Go to the class site</a></p>
+    <div class="es" lang="es">
+      <h2 style="font-family: Georgia, serif; font-weight: 600;">No encontramos esta página.</h2>
+      <p>Puede que el enlace sea viejo o tenga un error.</p>
+      <p><a href="./" data-home>Ir al sitio de la clase</a></p>
+    </div>
+  </main>
+  <script>
+    // GitHub Pages shows this page for any wrong address, so point the links at the site's home folder.
+    (function () {
+      var parts = location.pathname.split('/').filter(Boolean);
+      var home = /\.github\.io$/.test(location.hostname) && parts.length ? '/' + parts[0] + '/' : '/';
+      var links = document.querySelectorAll('[data-home]');
+      for (var i = 0; i < links.length; i++) links[i].setAttribute('href', home);
+    })();
+  </script>
+</body>
+</html>
