@@ -165,42 +165,45 @@ window.CONTENT = {
           assessments: [
             { date: "2026-09-29", title: { en: "Module 1 assessment", es: "Evaluación del módulo 1" } }
           ],
+          // DRAFT: topic names, big ideas, and examples are drafted from your lesson plans. TODO: check each topic name and letter against your teacher edition, and add video and slide links.
+          // TODO(es): have a Spanish speaker check the Spanish in these topics.
           topics: [
             {
               letter: "A",
-              title: { en: "Place value and powers of 10", es: "Valor posicional y potencias de 10" },
+              title: { en: "Place value, powers of 10, and measurement", es: "Valor posicional, potencias de 10 y medidas" },
               bigIdea: {
-                en: "Each place is worth 10 times the place to its right. When you multiply by 10, every digit moves one place to the left.",
-                es: "Cada lugar vale 10 veces más que el lugar de su derecha. Cuando multiplicas por 10, cada dígito se mueve un lugar a la izquierda."
+                en: "Each place is worth 10 times the place to its right. When you multiply or divide by 10, 100, or 1,000, the digits shift. We use that to change one unit to another, like kilometers to meters.",
+                es: "Cada lugar vale 10 veces más que el lugar de su derecha. Cuando multiplicas o divides por 10, 100 o 1,000, los dígitos se mueven. Lo usamos para cambiar una unidad por otra, como kilómetros a metros."
               },
               vocab: [
-                { en: "power of 10", es: "potencia de 10", example: "100 = 10²" },
-                { en: "exponent", es: "exponente", example: "10³ = 10 × 10 × 10" },
-                { en: "digit", es: "dígito", example: "352 has 3 digits." }
+                { en: "place value", es: "valor posicional", example: "In 4,052, the 4 is worth 4,000." },
+                { en: "power of 10", es: "potencia de 10", example: "10, 100, 1,000" },
+                { en: "convert", es: "convertir", example: "Change 3 km to 3,000 m." },
+                { en: "kilometer", es: "kilómetro", example: "1 km = 1,000 m" }
               ],
               example: {
-                problem: { en: "What is 34 × 100?", es: "¿Cuánto es 34 × 100?" },
+                problem: { en: "How many meters are in 7 kilometers?", es: "¿Cuántos metros hay en 7 kilómetros?" },
                 steps: [
-                  { en: "100 is 10 × 10. So multiply by 10 two times.", es: "100 es 10 × 10. Entonces multiplica por 10 dos veces." },
-                  { en: "34 × 10 = 340. Each digit moved one place left.", es: "34 × 10 = 340. Cada dígito se movió un lugar a la izquierda." },
-                  { en: "340 × 10 = 3,400. They moved one more place.", es: "340 × 10 = 3,400. Se movieron un lugar más." }
+                  { en: "1 kilometer is 1,000 meters.", es: "1 kilómetro son 1,000 metros." },
+                  { en: "7 kilometers is 7 groups of 1,000 meters.", es: "7 kilómetros son 7 grupos de 1,000 metros." },
+                  { en: "7 × 1,000 = 7,000.", es: "7 × 1,000 = 7,000." }
                 ],
-                answer: { en: "3,400", es: "3,400" }
+                answer: { en: "7,000 meters", es: "7,000 metros" }
               },
               video: "", slides: "", family: ""
             },
             {
               letter: "B",
-              title: { en: "Multiply big numbers", es: "Multiplicar números grandes" },
+              title: { en: "Multiply multi-digit numbers", es: "Multiplicar números de varios dígitos" },
               bigIdea: {
-                en: "Break a big number into parts. Multiply each part. Then add the parts back together.",
-                es: "Separa un número grande en partes. Multiplica cada parte. Después suma todas las partes."
+                en: "Break a big number into parts. Multiply each part. Then add the parts back together. An area model shows the parts as a rectangle.",
+                es: "Separa un número grande en partes. Multiplica cada parte. Después suma todas las partes. Un modelo de área muestra las partes como un rectángulo."
               },
               vocab: [
                 { en: "area model", es: "modelo de área", example: "A rectangle split into parts" },
                 { en: "partial products", es: "productos parciales", example: "20 × 14 and 3 × 14" },
-                { en: "standard algorithm", es: "algoritmo convencional", example: "Stacking the numbers to multiply" }
-                // TODO(es): check "algoritmo convencional" matches the Spanish Eureka materials.
+                { en: "standard algorithm", es: "algoritmo convencional", example: "Stacking the numbers to multiply" },
+                { en: "product", es: "producto", example: "6 × 4 = 24" }
               ],
               example: {
                 problem: { en: "What is 23 × 14?", es: "¿Cuánto es 23 × 14?" },
@@ -211,6 +214,55 @@ window.CONTENT = {
                   { en: "Add the parts: 280 + 42 = 322.", es: "Suma las partes: 280 + 42 = 322." }
                 ],
                 answer: { en: "322", es: "322" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "C",
+              title: { en: "Divide multi-digit numbers", es: "Dividir números de varios dígitos" },
+              bigIdea: {
+                en: "Division asks how many groups fit. Take out easy chunks first, like 10 groups or 30 groups. Keep going until nothing is left. Check with multiplication.",
+                es: "La división pregunta cuántos grupos caben. Saca primero partes fáciles, como 10 grupos o 30 grupos. Sigue hasta que no quede nada. Comprueba con la multiplicación."
+              },
+              vocab: [
+                { en: "dividend", es: "dividendo", example: "In 468 ÷ 12, the dividend is 468." },
+                { en: "divisor", es: "divisor", example: "In 468 ÷ 12, the divisor is 12." },
+                { en: "quotient", es: "cociente", example: "The answer to a division problem" },
+                { en: "remainder", es: "residuo", example: "What is left over" }
+              ],
+              example: {
+                problem: { en: "What is 468 ÷ 12?", es: "¿Cuánto es 468 ÷ 12?" },
+                steps: [
+                  { en: "Try 30 groups of 12: 30 × 12 = 360.", es: "Prueba con 30 grupos de 12: 30 × 12 = 360." },
+                  { en: "468 − 360 = 108 is left.", es: "468 − 360 = 108 es lo que queda." },
+                  { en: "9 groups of 12 is 108. Nothing is left.", es: "9 grupos de 12 son 108. No queda nada." },
+                  { en: "30 + 9 = 39 groups.", es: "30 + 9 = 39 grupos." }
+                ],
+                answer: { en: "39", es: "39" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "D",
+              title: { en: "Expressions and word problems", es: "Expresiones y problemas con palabras" },
+              bigIdea: {
+                en: "An expression is a math phrase with no equals sign. Read the problem. Draw a tape diagram. Then write an expression and solve.",
+                es: "Una expresión es una frase matemática sin signo de igual. Lee el problema. Dibuja un diagrama de cinta. Después escribe una expresión y resuélvela."
+              },
+              vocab: [
+                { en: "expression", es: "expresión", example: "(6 × 24) − 18" },
+                { en: "parentheses", es: "paréntesis", example: "(2 + 3) × 4" },
+                { en: "tape diagram", es: "diagrama de cinta", example: "Boxes in a row that show amounts" },
+                { en: "evaluate", es: "evaluar", example: "Find the value of an expression." }
+              ],
+              example: {
+                problem: { en: "A teacher has 6 boxes with 24 markers in each. 18 markers are broken. How many markers work?", es: "Una maestra tiene 6 cajas con 24 marcadores en cada una. 18 marcadores están dañados. ¿Cuántos marcadores sirven?" },
+                steps: [
+                  { en: "Read. Draw 6 boxes of 24 markers.", es: "Lee. Dibuja 6 cajas de 24 marcadores." },
+                  { en: "Write an expression: (6 × 24) − 18.", es: "Escribe una expresión: (6 × 24) − 18." },
+                  { en: "6 × 24 = 144. Then 144 − 18 = 126.", es: "6 × 24 = 144. Después 144 − 18 = 126." }
+                ],
+                answer: { en: "126 markers", es: "126 marcadores" }
               },
               video: "", slides: "", family: ""
             }
@@ -386,7 +438,7 @@ window.CONTENT = {
       modules: [
         {
           number: 1,
-          title: { en: "Ratios, Rates, and Percentages", es: "Razones, tasas y porcentajes" },
+          title: { en: "Ratios, Rates, and Percents", es: "Razones, tasas y porcentajes" },
           start: "2026-08-31", end: "2026-10-16",
           bigIdea: {
             en: "Ratios compare amounts. Rates and percents are ratios we see every day, like prices and sales.",
@@ -402,50 +454,48 @@ window.CONTENT = {
             { date: "2026-10-08", title: { en: "Topic D quiz", es: "Prueba del tema D" } },
             { date: "2026-10-15", title: { en: "Module 1 assessment", es: "Evaluación del módulo 1" } }
           ],
+          // DRAFT: topic names, big ideas, and examples are drafted from your lesson plans. TODO: check each topic name and letter against your teacher edition, and add video and slide links.
+          // TODO(es): have a Spanish speaker check the Spanish in these topics.
           topics: [
-            // TODO: match topic names and letters to your Eureka Math² teacher edition.
             {
               letter: "A",
-              title: { en: "Ratios", es: "Razones" },
+              title: { en: "Ratios, batches, and tape diagrams", es: "Razones, tandas y diagramas de cinta" },
               bigIdea: {
-                en: "A ratio compares two amounts. 3 cups of rice for every 2 cups of beans is the ratio 3 : 2.",
-                es: "Una razón compara dos cantidades. 3 tazas de arroz por cada 2 tazas de frijoles es la razón 3 : 2."
+                en: "A ratio compares two amounts. A batch is one full set of the ratio. Make more batches and both amounts grow together. A tape diagram helps when you only know the total.",
+                es: "Una razón compara dos cantidades. Una tanda es un conjunto completo de la razón. Si haces más tandas, las dos cantidades crecen juntas. Un diagrama de cinta ayuda cuando solo conoces el total."
               },
               vocab: [
-                { en: "ratio", es: "razón", example: "3 : 2" },
-                { en: "for every", es: "por cada", example: "2 dogs for every 1 cat" },
-                { en: "tape diagram", es: "diagrama de cinta", example: "Boxes in a row that show amounts" }
+                { en: "ratio", es: "razón", example: "3 : 4" },
+                { en: "batch", es: "tanda", example: "One full set of the recipe" },
+                { en: "tape diagram", es: "diagrama de cinta", example: "Boxes in a row, all the same size" },
+                { en: "part-to-whole", es: "parte a total", example: "3 raisins : 7 snacks total" }
               ],
               example: {
-                problem: {
-                  en: "A class has 2 boys for every 3 girls. Write the ratio of girls to boys.",
-                  es: "En una clase hay 2 niños por cada 3 niñas. Escribe la razón de niñas a niños."
-                },
+                problem: { en: "Trail mix uses 3 cups of raisins for every 4 cups of peanuts. How many cups of raisins go with 20 cups of peanuts?", es: "Una mezcla usa 3 tazas de pasas por cada 4 tazas de cacahuates. ¿Cuántas tazas de pasas van con 20 tazas de cacahuates?" },
                 steps: [
-                  { en: "The question asks for girls first.", es: "La pregunta pide primero las niñas." },
-                  { en: "Girls: 3. Boys: 2.", es: "Niñas: 3. Niños: 2." }
+                  { en: "One batch is 3 raisins : 4 peanuts.", es: "Una tanda es 3 de pasas : 4 de cacahuates." },
+                  { en: "20 peanuts is 20 ÷ 4 = 5 batches.", es: "20 de cacahuates son 20 ÷ 4 = 5 tandas." },
+                  { en: "5 batches of raisins is 5 × 3 = 15.", es: "5 tandas de pasas son 5 × 3 = 15." }
                 ],
-                answer: { en: "3 : 2", es: "3 : 2" }
+                answer: { en: "15 cups of raisins", es: "15 tazas de pasas" }
               },
               video: "", slides: "", family: ""
             },
             {
               letter: "B",
-              title: { en: "Ratio tables and double number lines", es: "Tablas de razones y rectas numéricas dobles" },
+              title: { en: "Equivalent ratios, tables, double number lines, and graphs", es: "Razones equivalentes, tablas, rectas numéricas dobles y gráficas" },
               bigIdea: {
-                en: "Equivalent ratios grow together. If you double one amount, you double the other one too.",
-                es: "Las razones equivalentes crecen juntas. Si duplicas una cantidad, también duplicas la otra."
+                en: "Equivalent ratios show the same relationship in different amounts. Multiply both numbers by the same number to make one. A table, a double number line, and a graph can all show the same ratios. Careful: adding the same number to both parts does not work.",
+                es: "Las razones equivalentes muestran la misma relación con cantidades distintas. Multiplica los dos números por el mismo número para hacer una. Una tabla, una recta numérica doble y una gráfica pueden mostrar las mismas razones. Ojo: sumar el mismo número a las dos partes no funciona."
               },
               vocab: [
                 { en: "equivalent ratios", es: "razones equivalentes", example: "3 : 2 and 6 : 4" },
                 { en: "ratio table", es: "tabla de razones", example: "A table where each row is the same ratio" },
-                { en: "double number line", es: "recta numérica doble", example: "Two number lines that line up" }
+                { en: "double number line", es: "recta numérica doble", example: "Two number lines that line up" },
+                { en: "ordered pair", es: "par ordenado", example: "(4, 6) is a point on a graph" }
               ],
               example: {
-                problem: {
-                  en: "A recipe uses 2 cups of flour for every 3 eggs. How many eggs go with 8 cups of flour?",
-                  es: "Una receta usa 2 tazas de harina por cada 3 huevos. ¿Cuántos huevos van con 8 tazas de harina?"
-                },
+                problem: { en: "A recipe uses 2 cups of flour for every 3 eggs. How many eggs go with 8 cups of flour?", es: "Una receta usa 2 tazas de harina por cada 3 huevos. ¿Cuántos huevos van con 8 tazas de harina?" },
                 steps: [
                   { en: "Make a table. First row: 2 flour, 3 eggs.", es: "Haz una tabla. Primera fila: 2 de harina, 3 huevos." },
                   { en: "8 is 2 × 4. So multiply both by 4.", es: "8 es 2 × 4. Entonces multiplica los dos por 4." },
@@ -457,21 +507,43 @@ window.CONTENT = {
             },
             {
               letter: "C",
-              title: { en: "Rates and unit rates", es: "Tasas y tasas unitarias" },
+              title: { en: "Comparing ratio relationships", es: "Comparar relaciones de razones" },
               bigIdea: {
-                en: "A unit rate tells you how much for 1. If 4 tacos cost $6, then 1 taco costs $1.50.",
-                es: "Una tasa unitaria te dice cuánto hay por 1. Si 4 tacos cuestan $6, entonces 1 taco cuesta $1.50."
+                en: "To compare two ratios, make an equivalent ratio so one number matches. Then look at the other number.",
+                es: "Para comparar dos razones, haz una razón equivalente para que un número sea igual. Después mira el otro número."
+              },
+              vocab: [
+                { en: "compare", es: "comparar", example: "Which mix is stronger?" },
+                { en: "equivalent ratios", es: "razones equivalentes", example: "2 : 5 and 6 : 15" },
+                { en: "mixture", es: "mezcla", example: "Juice and water mixed together" }
+              ],
+              example: {
+                problem: { en: "Mix A has 2 cups of juice for every 5 cups of water. Mix B has 3 cups of juice for every 6 cups of water. Which mix tastes more like juice?", es: "La mezcla A tiene 2 tazas de jugo por cada 5 tazas de agua. La mezcla B tiene 3 tazas de jugo por cada 6 tazas de agua. ¿Cuál sabe más a jugo?" },
+                steps: [
+                  { en: "Make the juice match. Use 6 cups of juice for both mixes.", es: "Haz que el jugo sea igual. Usa 6 tazas de jugo en las dos mezclas." },
+                  { en: "Mix A: 2 : 5 times 3 is 6 : 15.", es: "Mezcla A: 2 : 5 por 3 es 6 : 15." },
+                  { en: "Mix B: 3 : 6 times 2 is 6 : 12.", es: "Mezcla B: 3 : 6 por 2 es 6 : 12." },
+                  { en: "Same juice, less water in B. B tastes more like juice.", es: "Mismo jugo, menos agua en B. B sabe más a jugo." }
+                ],
+                answer: { en: "Mix B", es: "Mezcla B" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "D",
+              title: { en: "Rates, unit rates, and percents", es: "Tasas, tasas unitarias y porcentajes" },
+              bigIdea: {
+                en: "A unit rate tells you how much for 1. A percent is a rate out of 100. 25% means 25 out of every 100.",
+                es: "Una tasa unitaria te dice cuánto hay por 1. Un porcentaje es una tasa por cada 100. 25% quiere decir 25 de cada 100."
               },
               vocab: [
                 { en: "rate", es: "tasa", example: "60 miles in 2 hours" },
                 { en: "unit rate", es: "tasa unitaria", example: "30 miles per hour" },
+                { en: "percent", es: "porcentaje", example: "25% = 25 out of 100" },
                 { en: "per", es: "por", example: "$2 per pound" }
               ],
               example: {
-                problem: {
-                  en: "A car goes 150 miles in 3 hours. How far does it go in 1 hour?",
-                  es: "Un carro recorre 150 millas en 3 horas. ¿Cuánto recorre en 1 hora?"
-                },
+                problem: { en: "A car goes 150 miles in 3 hours. How far does it go in 1 hour?", es: "Un carro recorre 150 millas en 3 horas. ¿Cuánto recorre en 1 hora?" },
                 steps: [
                   { en: "We want the amount for 1 hour. Divide by 3.", es: "Queremos la cantidad para 1 hora. Divide entre 3." },
                   { en: "150 ÷ 3 = 50.", es: "150 ÷ 3 = 50." }
@@ -479,35 +551,12 @@ window.CONTENT = {
                 answer: { en: "50 miles per hour", es: "50 millas por hora" }
               },
               video: "", slides: "", family: ""
-            },
-            {
-              letter: "D",
-              title: { en: "Percents", es: "Porcentajes" },
-              bigIdea: {
-                en: "Percent means out of 100. 25% is 25 out of 100, which is the same as 1/4.",
-                es: "Por ciento quiere decir de cada 100. 25% es 25 de cada 100, que es lo mismo que 1/4."
-              },
-              vocab: [
-                { en: "percent", es: "porcentaje", example: "50% = 50 out of 100" },
-                { en: "part", es: "parte", example: "20 is part of 80." },
-                { en: "whole", es: "total", example: "80 is the whole." }
-              ],
-              example: {
-                problem: { en: "What is 25% of 80?", es: "¿Cuánto es el 25% de 80?" },
-                steps: [
-                  { en: "25% is the same as 1/4.", es: "25% es lo mismo que 1/4." },
-                  { en: "1/4 of 80 means 80 ÷ 4.", es: "1/4 de 80 quiere decir 80 ÷ 4." },
-                  { en: "80 ÷ 4 = 20.", es: "80 ÷ 4 = 20." }
-                ],
-                answer: { en: "20", es: "20" }
-              },
-              video: "", slides: "", family: ""
             }
           ]
         },
         {
           number: 2,
-          title: { en: "Arithmetic Operations Including Division of Fractions", es: "Operaciones aritméticas, incluida la división de fracciones" },
+          title: { en: "Operations with Fractions and Multi-Digit Numbers", es: "Operaciones con fracciones y números de varios dígitos" },
           start: "2026-10-19", end: "2026-12-18",
           bigIdea: {
             en: "We divide fractions and work with multi-digit decimals. Drawings come first.",
@@ -535,7 +584,6 @@ window.CONTENT = {
         },
         {
           number: 4,
-          // TODO: check this module title against your Eureka Math² materials.
           title: { en: "Expressions and One-Step Equations", es: "Expresiones y ecuaciones de un paso" },
           start: "2027-02-22", end: "2027-04-16",
           bigIdea: {
