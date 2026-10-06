@@ -798,7 +798,7 @@ window.CONTENT = {
             { en: "volume", es: "volumen", example: "A 2 by 3 by 4 box holds 24 cubes." }
           ],
           slides: "", assessments: [],
-          // Topic names are from the Eureka Math² Family Math letters. TODO: add the lesson lists, plus video and slide links.
+          // Topic names are from the Eureka Math² Teacher Edition. TODO: add video and slide links.
           // TODO(es): have a Spanish speaker check the Spanish in these topics.
           topics: [
             {
@@ -808,6 +808,15 @@ window.CONTENT = {
                 en: "Shapes can be sorted by their properties, like how many sides or right angles they have. A hierarchy shows that a shape shares all the properties of the groups above it.",
                 es: "Las figuras se pueden clasificar por sus propiedades, como la cantidad de lados o de ángulos rectos. Una jerarquía muestra que una figura tiene todas las propiedades de los grupos que están arriba."
               },
+              lessons: [
+                { n: 1, title: { en: "Analyze hierarchies and identify properties of quadrilaterals.", es: "Analizar jerarquías e identificar propiedades de los cuadriláteros." } },
+                { n: 2, title: { en: "Classify trapezoids based on their properties.", es: "Clasificar trapecios según sus propiedades." } },
+                { n: 3, title: { en: "Classify parallelograms based on their properties.", es: "Clasificar paralelogramos según sus propiedades." } },
+                { n: 4, title: { en: "Classify rectangles and rhombuses based on their properties.", es: "Clasificar rectángulos y rombos según sus propiedades." } },
+                { n: 5, title: { en: "Classify kites and squares based on their properties.", es: "Clasificar cometas y cuadrados según sus propiedades." } },
+                { n: 6, title: { en: "Identify quadrilaterals from given properties.", es: "Identificar cuadriláteros a partir de propiedades dadas." } },
+                { n: 7, title: { en: "Classify quadrilaterals in a hierarchy based on properties.", es: "Clasificar cuadriláteros en una jerarquía según sus propiedades." } }
+              ],
               vocab: [
                 { en: "quadrilateral", es: "cuadrilátero", example: "A shape with 4 sides" },
                 { en: "property", es: "propiedad", example: "4 equal sides" },
@@ -833,6 +842,16 @@ window.CONTENT = {
                 en: "You find the area of a rectangle with fraction sides the same way as with whole numbers: multiply the side lengths. You can tile with unit squares to see why it works.",
                 es: "Hallas el área de un rectángulo con lados fraccionarios igual que con números enteros: multiplicas las longitudes de los lados. Puedes cubrir con cuadrados unitarios para ver por qué funciona."
               },
+              lessons: [
+                { n: 8, title: { en: "Find areas of square tiles with fraction side lengths by relating the tile to a unit square.", es: "Hallar el área de baldosas cuadradas con lados fraccionarios relacionando la baldosa con un cuadrado unitario." } },
+                { n: 9, title: { en: "Organize, count, and represent a collection of square tiles.", es: "Organizar, contar y representar un conjunto de baldosas cuadradas." } },
+                { n: 10, title: { en: "Find the area of a rectangle with fraction side lengths by relating the rectangle to a unit square.", es: "Hallar el área de un rectángulo con lados fraccionarios relacionando el rectángulo con un cuadrado unitario." } },
+                { n: 11, title: { en: "Find areas of rectangles with fraction side lengths by using multiplication.", es: "Hallar el área de rectángulos con lados fraccionarios usando la multiplicación." } },
+                { n: 12, title: { en: "Multiply mixed numbers.", es: "Multiplicar números mixtos." } },
+                { n: 13, title: { en: "Solve mathematical problems involving areas of composite figures with mixed-number side lengths.", es: "Resolver problemas matemáticos con áreas de figuras compuestas con lados de números mixtos." } },
+                { n: 14, title: { en: "Solve real-world problems involving areas of composite figures with mixed-number side lengths.", es: "Resolver problemas de la vida real con áreas de figuras compuestas con lados de números mixtos." } },
+                { n: 15, title: { en: "Solve multi-step word problems involving multiplication of mixed numbers.", es: "Resolver problemas de varios pasos con multiplicación de números mixtos." } }
+              ],
               vocab: [
                 { en: "unit square", es: "cuadrado unitario", example: "A square with an area of 1 square unit" },
                 { en: "area", es: "área", example: "The space inside a flat shape" },
@@ -856,6 +875,14 @@ window.CONTENT = {
                 en: "Volume is how much space a solid takes up. We measure it in cubic units by filling a prism with unit cubes. You can break a prism into layers in different ways, and the volume stays the same.",
                 es: "El volumen es cuánto espacio ocupa un cuerpo sólido. Lo medimos en unidades cúbicas llenando un prisma con cubos unitarios. Puedes separar un prisma en capas de distintas maneras y el volumen sigue igual."
               },
+              lessons: [
+                { n: 16, title: { en: "Identify attributes and properties of right rectangular prisms.", es: "Identificar los atributos y las propiedades de los prismas rectangulares rectos." } },
+                { n: 17, title: { en: "Find the volume of right rectangular prisms by packing with unit cubes and counting.", es: "Hallar el volumen de prismas rectangulares rectos llenándolos con cubos unitarios y contando." } },
+                { n: 18, title: { en: "Find the volume of right rectangular prisms by packing with improvised units.", es: "Hallar el volumen de prismas rectangulares rectos llenándolos con unidades improvisadas." } },
+                { n: 19, title: { en: "Compose and decompose right rectangular prisms to find their volume by using layers.", es: "Componer y descomponer prismas rectangulares rectos para hallar su volumen usando capas." } },
+                { n: 20, title: { en: "Interpret volume as filling.", es: "Interpretar el volumen como llenado." } },
+                { n: 21, title: { en: "Relate volumes of solids and liquid volume.", es: "Relacionar el volumen de los sólidos con el volumen de los líquidos." } }
+              ],
               vocab: [
                 { en: "volume", es: "volumen", example: "The space inside a solid" },
                 { en: "unit cube", es: "cubo unitario", example: "A cube with a volume of 1 cubic unit" },
@@ -881,6 +908,15 @@ window.CONTENT = {
                 en: "Use the formula V = l × w × h, or V = B × h, to find volume faster. For a shape made of boxes, find each volume and add. Think about whether a problem asks for perimeter, area, or volume.",
                 es: "Usa la fórmula V = l × w × h, o V = B × h, para hallar el volumen más rápido. Para una figura hecha de cajas, halla cada volumen y suma. Piensa si el problema pide perímetro, área o volumen."
               },
+              lessons: [
+                { n: 22, title: { en: "Find the volumes of right rectangular prisms by using the area of the base.", es: "Hallar el volumen de prismas rectangulares rectos usando el área de la base." } },
+                { n: 23, title: { en: "Find the volumes of right rectangular prisms by multiplying the edge lengths.", es: "Hallar el volumen de prismas rectangulares rectos multiplicando las longitudes de las aristas." } },
+                { n: 24, title: { en: "Solve word problems involving volumes of right rectangular prisms.", es: "Resolver problemas con palabras sobre el volumen de prismas rectangulares rectos." } },
+                { n: 25, title: { en: "Find the volumes of solid figures composed of right rectangular prisms.", es: "Hallar el volumen de cuerpos geométricos formados por prismas rectangulares rectos." } },
+                { n: 26, title: { en: "Solve word problems involving perimeter, area, and volume.", es: "Resolver problemas con palabras sobre perímetro, área y volumen." } },
+                { n: 27, title: { en: "Apply concepts and formulas of volume to design a sculpture by using right rectangular prisms, part 1.", es: "Aplicar conceptos y fórmulas de volumen para diseñar una escultura con prismas rectangulares rectos, parte 1." } },
+                { n: 28, title: { en: "Apply concepts and formulas of volume to design a sculpture by using right rectangular prisms, part 2.", es: "Aplicar conceptos y fórmulas de volumen para diseñar una escultura con prismas rectangulares rectos, parte 2." } }
+              ],
               vocab: [
                 { en: "formula", es: "fórmula", example: "V = l × w × h" },
                 { en: "volume", es: "volumen", example: "The space inside a solid" },
@@ -913,7 +949,7 @@ window.CONTENT = {
             { en: "axis", es: "eje", example: "The x-axis goes side to side." }
           ],
           slides: "", assessments: [],
-          // Topic names are from the Eureka Math² Family Math letters. TODO: add the lesson lists, plus video and slide links.
+          // Topic names are from the Eureka Math² Teacher Edition. TODO: add video and slide links.
           // TODO(es): have a Spanish speaker check the Spanish in these topics.
           topics: [
             {
@@ -923,6 +959,12 @@ window.CONTENT = {
                 en: "Two number lines that cross at right angles make a coordinate plane. A point needs two numbers to name it, called an ordered pair. The first number goes along the x-axis. The second goes along the y-axis.",
                 es: "Dos rectas numéricas que se cruzan en ángulo recto forman un plano de coordenadas. Un punto necesita dos números para nombrarlo, llamados par ordenado. El primer número va a lo largo del eje x. El segundo va a lo largo del eje y."
               },
+              lessons: [
+                { n: 1, title: { en: "Construct a coordinate system on a line.", es: "Construir un sistema de coordenadas en una recta." } },
+                { n: 2, title: { en: "Construct a coordinate system in a plane.", es: "Construir un sistema de coordenadas en un plano." } },
+                { n: 3, title: { en: "Identify and plot points by using ordered pairs.", es: "Identificar y marcar puntos usando pares ordenados." } },
+                { n: 4, title: { en: "Describe the distance and direction between points in the coordinate plane.", es: "Describir la distancia y la dirección entre puntos en el plano de coordenadas." } }
+              ],
               vocab: [
                 { en: "coordinate plane", es: "plano de coordenadas", example: "A grid made with two number lines" },
                 { en: "ordered pair", es: "par ordenado", example: "(3, 5)" },
@@ -948,6 +990,14 @@ window.CONTENT = {
                 en: "Points on a horizontal line all have the same y-coordinate. Points on a vertical line all have the same x-coordinate. You can follow a rule to find more points and look for patterns between the coordinates.",
                 es: "Los puntos de una recta horizontal tienen la misma coordenada y. Los puntos de una recta vertical tienen la misma coordenada x. Puedes seguir una regla para hallar más puntos y buscar patrones entre las coordenadas."
               },
+              lessons: [
+                { n: 5, title: { en: "Identify properties of horizontal and vertical lines.", es: "Identificar las propiedades de las rectas horizontales y verticales." } },
+                { n: 6, title: { en: "Use properties of horizontal and vertical lines to solve problems.", es: "Usar las propiedades de las rectas horizontales y verticales para resolver problemas." } },
+                { n: 7, title: { en: "Generate number patterns to form ordered pairs.", es: "Generar patrones numéricos para formar pares ordenados." } },
+                { n: 8, title: { en: "Identify addition and subtraction relationships between corresponding terms in number patterns.", es: "Identificar relaciones de suma y resta entre términos correspondientes en patrones numéricos." } },
+                { n: 9, title: { en: "Identify multiplication and division relationships between corresponding terms in number patterns.", es: "Identificar relaciones de multiplicación y división entre términos correspondientes en patrones numéricos." } },
+                { n: 10, title: { en: "Identify mixed-operation relationships between corresponding terms in number patterns. (Optional)", es: "Identificar relaciones con operaciones combinadas entre términos correspondientes en patrones numéricos. (Opcional)" } }
+              ],
               vocab: [
                 { en: "x-coordinate", es: "coordenada x", example: "The first number in (2, 7)" },
                 { en: "y-coordinate", es: "coordenada y", example: "The second number in (2, 7)" },
@@ -972,6 +1022,13 @@ window.CONTENT = {
                 en: "The grid lines meet at right angles, so you can use the plane to build shapes, name them, check for symmetry, and find area and perimeter.",
                 es: "Las líneas de la cuadrícula se cruzan en ángulos rectos, así que puedes usar el plano para construir figuras, nombrarlas, buscar simetría y hallar el área y el perímetro."
               },
+              lessons: [
+                { n: 11, title: { en: "Draw lines in the coordinate plane and identify points on the lines.", es: "Dibujar rectas en el plano de coordenadas e identificar puntos en las rectas." } },
+                { n: 12, title: { en: "Graph and classify quadrilaterals in the coordinate plane.", es: "Graficar y clasificar cuadriláteros en el plano de coordenadas." } },
+                { n: 13, title: { en: "Draw symmetric figures in the coordinate plane.", es: "Dibujar figuras simétricas en el plano de coordenadas." } },
+                { n: 14, title: { en: "Solve mathematical problems with rectangles in the coordinate plane.", es: "Resolver problemas matemáticos con rectángulos en el plano de coordenadas." } },
+                { n: 15, title: { en: "Use the coordinate plane to reason about perimeters and areas of rectangles.", es: "Usar el plano de coordenadas para razonar sobre perímetros y áreas de rectángulos." } }
+              ],
               vocab: [
                 { en: "symmetry", es: "simetría", example: "A shape that matches when you fold it" },
                 { en: "perimeter", es: "perímetro", example: "The distance around a shape" },
@@ -996,6 +1053,13 @@ window.CONTENT = {
                 en: "Graphs can show real situations. Each x-coordinate and y-coordinate means something, like hours and dollars. Plot the points and look for a pattern, or trend, to solve problems.",
                 es: "Las gráficas pueden mostrar situaciones reales. Cada coordenada x y cada coordenada y significan algo, como horas y dólares. Marca los puntos y busca un patrón, o tendencia, para resolver problemas."
               },
+              lessons: [
+                { n: 16, title: { en: "Interpret graphs that represent real-world situations.", es: "Interpretar gráficas que representan situaciones de la vida real." } },
+                { n: 17, title: { en: "Plot data in the coordinate plane and analyze relationships.", es: "Marcar datos en el plano de coordenadas y analizar relaciones." } },
+                { n: 18, title: { en: "Interpret line graphs.", es: "Interpretar gráficas de líneas." } },
+                { n: 19, title: { en: "Reason about visual patterns by using tables and graphs. (Optional)", es: "Razonar sobre patrones visuales usando tablas y gráficas. (Opcional)" } },
+                { n: 20, title: { en: "Reason about patterns in real-world situations.", es: "Razonar sobre patrones en situaciones de la vida real." } }
+              ],
               vocab: [
                 { en: "coordinate", es: "coordenada", example: "A number that tells where a point is" },
                 { en: "trend", es: "tendencia", example: "The pattern a graph shows" },
