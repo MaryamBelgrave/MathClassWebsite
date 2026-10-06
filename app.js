@@ -159,10 +159,13 @@
       return '<a class="' + (cls || '') + '" href="' + esc(u) + '">' + (iconName ? icon(iconName) : '') + '<span>' + lbl + '</span></a>';
     }
     var isWeb = /^https?:/i.test(u);
+    var isPdf = /\.pdf($|[?#])/i.test(u);
     var host = hostOf(u);
-    return '<a class="' + (cls || '') + '" href="' + esc(u) + '"' + (isWeb ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' +
+    var newTab = isWeb || isPdf;
+    var where = isWeb ? (host ? host + ', ' : '') : isPdf ? 'PDF, ' : '';
+    return '<a class="' + (cls || '') + '" href="' + esc(u) + '"' + (newTab ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' +
       (iconName ? icon(iconName) : '') + '<span>' + lbl + '</span>' +
-      (isWeb ? icon('external', 'icon-ext') + '<span class="sr-only"> (' + (host ? esc(host) + ', ' : '') + T('newTab') + ')</span>' : '') +
+      (newTab ? icon('external', 'icon-ext') + '<span class="sr-only"> (' + esc(where) + T('newTab') + ')</span>' : '') +
       '</a>';
   }
 
@@ -500,7 +503,7 @@
       html += '<ul class="link-row">' +
         '<li>' + ext(tp.video || g.videos, t('watchVideo'), 'btn', 'play') + '</li>' +
         '<li>' + ext(tp.slides || sel.slides || g.slides, t('slides'), 'btn', 'slides') + '</li>' +
-        '<li>' + ext(tp.family || sel.family || links.eurekaFamily, t('familyGuide'), 'btn', 'people') + '</li>' +
+        '<li>' + ext(L(tp.family) || L(sel.family) || links.eurekaFamily, t('familyGuide'), 'btn', 'people') + '</li>' +
         '</ul>';
       html += stuckBlock();
       html += '</article>';

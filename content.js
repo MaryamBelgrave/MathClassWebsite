@@ -205,7 +205,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "50,000", es: "50,000" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: { en: "family/g5-m1-ta.pdf", es: "family/g5-m1-ta-es.pdf" }
             },
             {
               letter: "B",
@@ -501,7 +501,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "9", es: "9" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: "family/g5-m3-ta.pdf"
             },
             {
               letter: "B",
@@ -534,7 +534,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "1/2", es: "1/2" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: "family/g5-m3-tb.pdf"
             },
             {
               letter: "C",
@@ -566,7 +566,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "12", es: "12" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: "family/g5-m3-tc.pdf"
             },
             {
               letter: "D",
@@ -599,7 +599,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "$25", es: "$25" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: "family/g5-m3-td.pdf"
             }
           ]
         },
@@ -653,7 +653,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "0.016", es: "0.016" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: "family/g5-m4-ta.pdf"
             },
             {
               letter: "B",
@@ -685,7 +685,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "4.15", es: "4.15" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: "family/g5-m4-tb.pdf"
             },
             {
               letter: "C",
@@ -717,7 +717,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "2.4", es: "2.4" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: "family/g5-m4-tc.pdf"
             },
             {
               letter: "D",
@@ -749,7 +749,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "0.8", es: "0.8" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: "family/g5-m4-td.pdf"
             },
             {
               letter: "E",
@@ -781,7 +781,7 @@ window.CONTENT = {
                 ],
                 answer: { en: "2,500 meters", es: "2,500 metros" }
               },
-              video: "", slides: "", family: ""
+              video: "", slides: "", family: "family/g5-m4-te.pdf"
             }
           ]
         },
@@ -797,7 +797,108 @@ window.CONTENT = {
             { en: "area", es: "área", example: "A 3 by 4 rectangle has an area of 12 square units." },
             { en: "volume", es: "volumen", example: "A 2 by 3 by 4 box holds 24 cubes." }
           ],
-          slides: "", assessments: [], topics: []
+          slides: "", assessments: [],
+          // Topic names are from the Eureka Math² Family Math letters. TODO: add the lesson lists, plus video and slide links.
+          // TODO(es): have a Spanish speaker check the Spanish in these topics.
+          topics: [
+            {
+              letter: "A",
+              title: { en: "Drawing, Analysis, and Classification of Two-Dimensional Figures", es: "Dibujo, análisis y clasificación de figuras bidimensionales" },
+              bigIdea: {
+                en: "Shapes can be sorted by their properties, like how many sides or right angles they have. A hierarchy shows that a shape shares all the properties of the groups above it.",
+                es: "Las figuras se pueden clasificar por sus propiedades, como la cantidad de lados o de ángulos rectos. Una jerarquía muestra que una figura tiene todas las propiedades de los grupos que están arriba."
+              },
+              vocab: [
+                { en: "quadrilateral", es: "cuadrilátero", example: "A shape with 4 sides" },
+                { en: "property", es: "propiedad", example: "4 equal sides" },
+                { en: "kite", es: "cometa", example: "Two pairs of equal sides next to each other" },
+                { en: "midpoint", es: "punto medio", example: "The point halfway along a line segment" },
+                { en: "plane", es: "plano", example: "A flat surface that goes on forever" }
+              ],
+              example: {
+                problem: { en: "Is every square also a rectangle?", es: "¿Todo cuadrado es también un rectángulo?" },
+                steps: [
+                  { en: "A rectangle is a quadrilateral with 4 right angles.", es: "Un rectángulo es un cuadrilátero con 4 ángulos rectos." },
+                  { en: "A square has 4 right angles, and 4 equal sides too.", es: "Un cuadrado tiene 4 ángulos rectos y también 4 lados iguales." },
+                  { en: "So a square has every property of a rectangle.", es: "Entonces un cuadrado tiene todas las propiedades de un rectángulo." }
+                ],
+                answer: { en: "Yes", es: "Sí" }
+              },
+              video: "", slides: "", family: "family/g5-m5-ta.pdf"
+            },
+            {
+              letter: "B",
+              title: { en: "Areas of Rectangular Figures with Fraction Side Lengths", es: "Áreas de figuras rectangulares con lados de longitud fraccionaria" },
+              bigIdea: {
+                en: "You find the area of a rectangle with fraction sides the same way as with whole numbers: multiply the side lengths. You can tile with unit squares to see why it works.",
+                es: "Hallas el área de un rectángulo con lados fraccionarios igual que con números enteros: multiplicas las longitudes de los lados. Puedes cubrir con cuadrados unitarios para ver por qué funciona."
+              },
+              vocab: [
+                { en: "unit square", es: "cuadrado unitario", example: "A square with an area of 1 square unit" },
+                { en: "area", es: "área", example: "The space inside a flat shape" },
+                { en: "composite figure", es: "figura compuesta", example: "A shape made of two or more simpler shapes" }
+              ],
+              example: {
+                problem: { en: "A rectangle is 2/3 unit wide and 3/4 unit long. What is its area?", es: "Un rectángulo mide 2/3 de unidad de ancho y 3/4 de unidad de largo. ¿Cuál es su área?" },
+                steps: [
+                  { en: "Multiply the side lengths: 2/3 × 3/4.", es: "Multiplica las longitudes de los lados: 2/3 × 3/4." },
+                  { en: "2 × 3 = 6 and 3 × 4 = 12, so the area is 6/12.", es: "2 × 3 = 6 y 3 × 4 = 12, así que el área es 6/12." },
+                  { en: "6/12 = 1/2.", es: "6/12 = 1/2." }
+                ],
+                answer: { en: "1/2 square unit", es: "1/2 unidad cuadrada" }
+              },
+              video: "", slides: "", family: "family/g5-m5-tb.pdf"
+            },
+            {
+              letter: "C",
+              title: { en: "Volume Concepts", es: "Conceptos de volumen" },
+              bigIdea: {
+                en: "Volume is how much space a solid takes up. We measure it in cubic units by filling a prism with unit cubes. You can break a prism into layers in different ways, and the volume stays the same.",
+                es: "El volumen es cuánto espacio ocupa un cuerpo sólido. Lo medimos en unidades cúbicas llenando un prisma con cubos unitarios. Puedes separar un prisma en capas de distintas maneras y el volumen sigue igual."
+              },
+              vocab: [
+                { en: "volume", es: "volumen", example: "The space inside a solid" },
+                { en: "unit cube", es: "cubo unitario", example: "A cube with a volume of 1 cubic unit" },
+                { en: "cubic unit", es: "unidad cúbica", example: "The unit we use to measure volume" },
+                { en: "right rectangular prism", es: "prisma rectangular recto", example: "A box shape" },
+                { en: "base", es: "base", example: "The bottom face of a prism" }
+              ],
+              example: {
+                problem: { en: "A box is 3 units long, 2 units wide, and 4 units tall. What is its volume?", es: "Una caja mide 3 unidades de largo, 2 de ancho y 4 de alto. ¿Cuál es su volumen?" },
+                steps: [
+                  { en: "One layer on the bottom has 3 × 2 = 6 unit cubes.", es: "Una capa en la base tiene 3 × 2 = 6 cubos unitarios." },
+                  { en: "There are 4 layers.", es: "Hay 4 capas." },
+                  { en: "4 × 6 = 24.", es: "4 × 6 = 24." }
+                ],
+                answer: { en: "24 cubic units", es: "24 unidades cúbicas" }
+              },
+              video: "", slides: "", family: "family/g5-m5-tc.pdf"
+            },
+            {
+              letter: "D",
+              title: { en: "Volume and the Operations of Multiplication and Addition", es: "Volumen y las operaciones de multiplicación y suma" },
+              bigIdea: {
+                en: "Use the formula V = l × w × h, or V = B × h, to find volume faster. For a shape made of boxes, find each volume and add. Think about whether a problem asks for perimeter, area, or volume.",
+                es: "Usa la fórmula V = l × w × h, o V = B × h, para hallar el volumen más rápido. Para una figura hecha de cajas, halla cada volumen y suma. Piensa si el problema pide perímetro, área o volumen."
+              },
+              vocab: [
+                { en: "formula", es: "fórmula", example: "V = l × w × h" },
+                { en: "volume", es: "volumen", example: "The space inside a solid" },
+                { en: "composite figure", es: "figura compuesta", example: "A shape made of two or more simpler shapes" },
+                { en: "milliliter", es: "mililitro", example: "1 cubic centimeter = 1 milliliter" }
+              ],
+              example: {
+                problem: { en: "Kelly fills an aquarium with water to a height of 25 cm. The aquarium is 20 cm by 25 cm on the bottom. It holds 15,000 milliliters. How many more milliliters does she need to fill it to the top?", es: "Kelly llena un acuario con agua hasta una altura de 25 cm. La base mide 20 cm por 25 cm. Cabe 15,000 mililitros. ¿Cuántos mililitros más necesita para llenarlo hasta arriba?" },
+                steps: [
+                  { en: "Find the volume of the water now: V = 20 × 25 × 25 = 12,500 cubic centimeters.", es: "Halla el volumen del agua ahora: V = 20 × 25 × 25 = 12,500 centímetros cúbicos." },
+                  { en: "1 cubic centimeter is 1 milliliter, so that is 12,500 milliliters.", es: "1 centímetro cúbico es 1 mililitro, así que son 12,500 mililitros." },
+                  { en: "15,000 − 12,500 = 2,500.", es: "15,000 − 12,500 = 2,500." }
+                ],
+                answer: { en: "2,500 milliliters", es: "2,500 mililitros" }
+              },
+              video: "", slides: "", family: "family/g5-m5-td.pdf"
+            }
+          ]
         },
         {
           number: 6,
@@ -811,7 +912,107 @@ window.CONTENT = {
             { en: "coordinate pair", es: "par ordenado", example: "(3, 5)" },
             { en: "axis", es: "eje", example: "The x-axis goes side to side." }
           ],
-          slides: "", assessments: [], topics: []
+          slides: "", assessments: [],
+          // Topic names are from the Eureka Math² Family Math letters. TODO: add the lesson lists, plus video and slide links.
+          // TODO(es): have a Spanish speaker check the Spanish in these topics.
+          topics: [
+            {
+              letter: "A",
+              title: { en: "Coordinate Systems", es: "Sistemas de coordenadas" },
+              bigIdea: {
+                en: "Two number lines that cross at right angles make a coordinate plane. A point needs two numbers to name it, called an ordered pair. The first number goes along the x-axis. The second goes along the y-axis.",
+                es: "Dos rectas numéricas que se cruzan en ángulo recto forman un plano de coordenadas. Un punto necesita dos números para nombrarlo, llamados par ordenado. El primer número va a lo largo del eje x. El segundo va a lo largo del eje y."
+              },
+              vocab: [
+                { en: "coordinate plane", es: "plano de coordenadas", example: "A grid made with two number lines" },
+                { en: "ordered pair", es: "par ordenado", example: "(3, 5)" },
+                { en: "origin", es: "origen", example: "The point (0, 0)" },
+                { en: "x-axis", es: "eje x", example: "The horizontal number line" },
+                { en: "y-axis", es: "eje y", example: "The vertical number line" }
+              ],
+              example: {
+                problem: { en: "How do you plot the point (3, 5)?", es: "¿Cómo se marca el punto (3, 5)?" },
+                steps: [
+                  { en: "Start at the origin, (0, 0).", es: "Empieza en el origen, (0, 0)." },
+                  { en: "The first number is the x-coordinate. Move 3 to the right.", es: "El primer número es la coordenada x. Muévete 3 a la derecha." },
+                  { en: "The second number is the y-coordinate. Move 5 up. Mark the point.", es: "El segundo número es la coordenada y. Muévete 5 hacia arriba. Marca el punto." }
+                ],
+                answer: { en: "3 right, 5 up", es: "3 a la derecha, 5 hacia arriba" }
+              },
+              video: "", slides: "", family: "family/g5-m6-ta.pdf"
+            },
+            {
+              letter: "B",
+              title: { en: "Patterns in the Coordinate Plane", es: "Patrones en el plano de coordenadas" },
+              bigIdea: {
+                en: "Points on a horizontal line all have the same y-coordinate. Points on a vertical line all have the same x-coordinate. You can follow a rule to find more points and look for patterns between the coordinates.",
+                es: "Los puntos de una recta horizontal tienen la misma coordenada y. Los puntos de una recta vertical tienen la misma coordenada x. Puedes seguir una regla para hallar más puntos y buscar patrones entre las coordenadas."
+              },
+              vocab: [
+                { en: "x-coordinate", es: "coordenada x", example: "The first number in (2, 7)" },
+                { en: "y-coordinate", es: "coordenada y", example: "The second number in (2, 7)" },
+                { en: "horizontal", es: "horizontal", example: "Side to side" },
+                { en: "vertical", es: "vertical", example: "Up and down" }
+              ],
+              example: {
+                problem: { en: "The points (2, 7), (5, 7), and (9, 7) are on the same line. What do they have in common?", es: "Los puntos (2, 7), (5, 7) y (9, 7) están en la misma recta. ¿Qué tienen en común?" },
+                steps: [
+                  { en: "Look at the y-coordinates: 7, 7, and 7.", es: "Mira las coordenadas y: 7, 7 y 7." },
+                  { en: "All the points are 7 up from the x-axis.", es: "Todos los puntos están 7 unidades arriba del eje x." },
+                  { en: "So they are on a horizontal line.", es: "Entonces están en una recta horizontal." }
+                ],
+                answer: { en: "They all have a y-coordinate of 7.", es: "Todos tienen coordenada y igual a 7." }
+              },
+              video: "", slides: "", family: "family/g5-m6-tb.pdf"
+            },
+            {
+              letter: "C",
+              title: { en: "Solve Mathematical Problems in the Coordinate Plane", es: "Resolver problemas matemáticos en el plano de coordenadas" },
+              bigIdea: {
+                en: "The grid lines meet at right angles, so you can use the plane to build shapes, name them, check for symmetry, and find area and perimeter.",
+                es: "Las líneas de la cuadrícula se cruzan en ángulos rectos, así que puedes usar el plano para construir figuras, nombrarlas, buscar simetría y hallar el área y el perímetro."
+              },
+              vocab: [
+                { en: "symmetry", es: "simetría", example: "A shape that matches when you fold it" },
+                { en: "perimeter", es: "perímetro", example: "The distance around a shape" },
+                { en: "area", es: "área", example: "The space inside a flat shape" },
+                { en: "right angle", es: "ángulo recto", example: "A square corner" }
+              ],
+              example: {
+                problem: { en: "Plot (1, 1), (4, 1), (4, 3), and (1, 3) and connect them. What shape is it? What is its area and perimeter?", es: "Marca (1, 1), (4, 1), (4, 3) y (1, 3) y únelos. ¿Qué figura es? ¿Cuál es su área y su perímetro?" },
+                steps: [
+                  { en: "The shape has 4 right angles. It is a rectangle.", es: "La figura tiene 4 ángulos rectos. Es un rectángulo." },
+                  { en: "It is 3 units wide (4 − 1) and 2 units tall (3 − 1).", es: "Mide 3 unidades de ancho (4 − 1) y 2 de alto (3 − 1)." },
+                  { en: "Area: 3 × 2 = 6. Perimeter: 3 + 2 + 3 + 2 = 10.", es: "Área: 3 × 2 = 6. Perímetro: 3 + 2 + 3 + 2 = 10." }
+                ],
+                answer: { en: "Rectangle. Area 6 square units. Perimeter 10 units.", es: "Rectángulo. Área 6 unidades cuadradas. Perímetro 10 unidades." }
+              },
+              video: "", slides: "", family: "family/g5-m6-tc.pdf"
+            },
+            {
+              letter: "D",
+              title: { en: "Solve Real-World Problems with the Coordinate Plane", es: "Resolver problemas de la vida real con el plano de coordenadas" },
+              bigIdea: {
+                en: "Graphs can show real situations. Each x-coordinate and y-coordinate means something, like hours and dollars. Plot the points and look for a pattern, or trend, to solve problems.",
+                es: "Las gráficas pueden mostrar situaciones reales. Cada coordenada x y cada coordenada y significan algo, como horas y dólares. Marca los puntos y busca un patrón, o tendencia, para resolver problemas."
+              },
+              vocab: [
+                { en: "coordinate", es: "coordenada", example: "A number that tells where a point is" },
+                { en: "trend", es: "tendencia", example: "The pattern a graph shows" },
+                { en: "data", es: "datos", example: "The numbers we collect" }
+              ],
+              example: {
+                problem: { en: "A graph shows hours babysitting (x) and dollars earned (y). The points are (1, 8), (2, 16), and (3, 24). What does (2, 16) mean? How much for 5 hours?", es: "Una gráfica muestra las horas de cuidar niños (x) y los dólares ganados (y). Los puntos son (1, 8), (2, 16) y (3, 24). ¿Qué significa (2, 16)? ¿Cuánto se gana en 5 horas?" },
+                steps: [
+                  { en: "(2, 16) means 2 hours earns $16.", es: "(2, 16) significa que 2 horas ganan $16." },
+                  { en: "The y-coordinates go up by 8 each hour. That is $8 per hour.", es: "Las coordenadas y suben de 8 en 8 cada hora. Son $8 por hora." },
+                  { en: "5 hours is 5 × 8 = 40.", es: "5 horas son 5 × 8 = 40." }
+                ],
+                answer: { en: "$40", es: "$40" }
+              },
+              video: "", slides: "", family: "family/g5-m6-td.pdf"
+            }
+          ]
         }
       ]
     },
