@@ -466,7 +466,142 @@ window.CONTENT = {
             { en: "fraction of a set", es: "fracción de un conjunto", example: "1/3 of 12 is 4." },
             { en: "unit fraction", es: "fracción unitaria", example: "1/5" }
           ],
-          slides: "", assessments: [], topics: []
+          slides: "", assessments: [],
+          // Topic names and lessons are from the Eureka Math² Teacher Edition. TODO: add video and slide links for each topic.
+          // TODO(es): have a Spanish speaker check the Spanish in these topics.
+          topics: [
+            {
+              letter: "A",
+              title: { en: "Multiplication of a Whole Number by a Fraction", es: "Multiplicación de un número entero por una fracción" },
+              bigIdea: {
+                en: "Finding a fraction of a group means multiplying. To find 3/4 of 12, split 12 into 4 equal groups, then take 3 of them. We also use this to change customary units, like feet to inches.",
+                es: "Hallar una fracción de un grupo es multiplicar. Para hallar 3/4 de 12, divide 12 en 4 grupos iguales y toma 3 de ellos. También lo usamos para cambiar unidades usuales, como pies a pulgadas."
+              },
+              lessons: [
+                { n: 1, title: { en: "Find fractions of a set with arrays.", es: "Hallar fracciones de un conjunto con arreglos." } },
+                { n: 2, title: { en: "Interpret fractions as division to find fractions of a set with tape diagrams and number lines.", es: "Interpretar fracciones como división para hallar fracciones de un conjunto con diagramas de cinta y rectas numéricas." } },
+                { n: 3, title: { en: "Multiply a whole number by a fraction less than 1.", es: "Multiplicar un número entero por una fracción menor que 1." } },
+                { n: 4, title: { en: "Multiply a whole number by a fraction.", es: "Multiplicar un número entero por una fracción." } },
+                { n: 5, title: { en: "Convert larger customary measurement units to smaller measurement units.", es: "Convertir unidades de medida usuales más grandes a unidades más pequeñas." } },
+                { n: 6, title: { en: "Convert smaller customary measurement units to larger measurement units.", es: "Convertir unidades de medida usuales más pequeñas a unidades más grandes." } }
+              ],
+              vocab: [
+                { en: "fraction of a set", es: "fracción de un conjunto", example: "1/3 of 12 is 4." },
+                { en: "unit fraction", es: "fracción unitaria", example: "1/5" },
+                { en: "array", es: "arreglo", example: "Rows and columns of objects" },
+                { en: "convert", es: "convertir", example: "3 feet = 36 inches" },
+                { en: "customary unit", es: "unidad usual", example: "Inch, foot, pound, gallon" }
+              ],
+              example: {
+                problem: { en: "What is 3/4 of 12?", es: "¿Cuánto es 3/4 de 12?" },
+                steps: [
+                  { en: "Split 12 into 4 equal groups. 12 ÷ 4 = 3 in each group.", es: "Divide 12 en 4 grupos iguales. 12 ÷ 4 = 3 en cada grupo." },
+                  { en: "3/4 means 3 of those groups.", es: "3/4 quiere decir 3 de esos grupos." },
+                  { en: "3 × 3 = 9.", es: "3 × 3 = 9." }
+                ],
+                answer: { en: "9", es: "9" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "B",
+              title: { en: "Multiplication of Fractions", es: "Multiplicación de fracciones" },
+              bigIdea: {
+                en: "Multiplying fractions means finding a part of a part. An area model shows it: cut a rectangle into rows and columns. Multiply the numerators. Multiply the denominators. When you multiply by a fraction less than 1, the product is smaller than the number you started with.",
+                es: "Multiplicar fracciones es hallar una parte de una parte. Un modelo de área lo muestra: corta un rectángulo en filas y columnas. Multiplica los numeradores. Multiplica los denominadores. Cuando multiplicas por una fracción menor que 1, el producto es menor que el número con el que empezaste."
+              },
+              lessons: [
+                { n: 7, title: { en: "Multiply fractions less than 1 by unit fractions pictorially.", es: "Multiplicar fracciones menores que 1 por fracciones unitarias con modelos gráficos." } },
+                { n: 8, title: { en: "Multiply fractions less than 1 pictorially.", es: "Multiplicar fracciones menores que 1 con modelos gráficos." } },
+                { n: 9, title: { en: "Multiply fractions by unit fractions by making simpler problems.", es: "Multiplicar fracciones por fracciones unitarias creando problemas más sencillos." } },
+                { n: 10, title: { en: "Multiply fractions greater than 1 by fractions.", es: "Multiplicar fracciones mayores que 1 por fracciones." } },
+                { n: 11, title: { en: "Multiply fractions.", es: "Multiplicar fracciones." } }
+              ],
+              vocab: [
+                { en: "area model", es: "modelo de área", example: "A rectangle cut into rows and columns" },
+                { en: "numerator", es: "numerador", example: "The 2 in 2/3" },
+                { en: "denominator", es: "denominador", example: "The 3 in 2/3" },
+                { en: "product", es: "producto", example: "The answer to a multiplication problem" },
+                { en: "unit fraction", es: "fracción unitaria", example: "1/4" }
+              ],
+              example: {
+                problem: { en: "What is 2/3 × 3/4?", es: "¿Cuánto es 2/3 × 3/4?" },
+                steps: [
+                  { en: "Multiply the numerators: 2 × 3 = 6.", es: "Multiplica los numeradores: 2 × 3 = 6." },
+                  { en: "Multiply the denominators: 3 × 4 = 12.", es: "Multiplica los denominadores: 3 × 4 = 12." },
+                  { en: "6/12 = 1/2.", es: "6/12 = 1/2." },
+                  { en: "Check: both factors are less than 1, so the product is smaller than 3/4. It is.", es: "Comprueba: los dos factores son menores que 1, así que el producto es menor que 3/4. Sí lo es." }
+                ],
+                answer: { en: "1/2", es: "1/2" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "C",
+              title: { en: "Division with a Unit Fraction and a Whole Number", es: "División con una fracción unitaria y un número entero" },
+              bigIdea: {
+                en: "To divide a whole number by a unit fraction, ask how many pieces fit. 3 ÷ 1/4 asks how many fourths are in 3. To divide a unit fraction by a whole number, split the piece into smaller equal pieces. Multiplication and division are partners.",
+                es: "Para dividir un número entero entre una fracción unitaria, pregunta cuántas partes caben. 3 ÷ 1/4 pregunta cuántos cuartos hay en 3. Para dividir una fracción unitaria entre un número entero, divide la parte en partes iguales más pequeñas. La multiplicación y la división son compañeras."
+              },
+              lessons: [
+                { n: 12, title: { en: "Divide a nonzero whole number by a unit fraction to find the number of groups.", es: "Dividir un número entero distinto de cero entre una fracción unitaria para hallar la cantidad de grupos." } },
+                { n: 13, title: { en: "Divide a nonzero whole number by a unit fraction to find the size of the group.", es: "Dividir un número entero distinto de cero entre una fracción unitaria para hallar el tamaño del grupo." } },
+                { n: 14, title: { en: "Divide a unit fraction by a nonzero whole number.", es: "Dividir una fracción unitaria entre un número entero distinto de cero." } },
+                { n: 15, title: { en: "Divide by whole numbers and unit fractions.", es: "Dividir entre números enteros y fracciones unitarias." } },
+                { n: 16, title: { en: "Reason about the size of quotients of whole numbers and unit fractions and quotients of unit fractions and whole numbers.", es: "Razonar sobre el tamaño de los cocientes de números enteros y fracciones unitarias, y de fracciones unitarias y números enteros." } },
+                { n: 17, title: { en: "Solve word problems involving fractions with multiplication and division.", es: "Resolver problemas con palabras que incluyen fracciones con multiplicación y división." } }
+              ],
+              vocab: [
+                { en: "unit fraction", es: "fracción unitaria", example: "1/4" },
+                { en: "quotient", es: "cociente", example: "The answer to a division problem" },
+                { en: "number of groups", es: "cantidad de grupos", example: "How many fourths fit in 3?" },
+                { en: "size of the group", es: "tamaño del grupo", example: "How big is each share?" }
+              ],
+              example: {
+                problem: { en: "What is 3 ÷ 1/4?", es: "¿Cuánto es 3 ÷ 1/4?" },
+                steps: [
+                  { en: "This asks how many fourths are in 3 wholes.", es: "Esto pregunta cuántos cuartos hay en 3 enteros." },
+                  { en: "1 whole has 4 fourths.", es: "1 entero tiene 4 cuartos." },
+                  { en: "3 wholes have 3 × 4 = 12 fourths.", es: "3 enteros tienen 3 × 4 = 12 cuartos." }
+                ],
+                answer: { en: "12", es: "12" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "D",
+              title: { en: "Multi-Step Problems with Fractions", es: "Problemas de varios pasos con fracciones" },
+              bigIdea: {
+                en: "Use everything you know about fractions. Draw a tape diagram. Write an equation with parentheses to show which step comes first. Work one step at a time, and check that your answer makes sense.",
+                es: "Usa todo lo que sabes de fracciones. Dibuja un diagrama de cinta. Escribe una ecuación con paréntesis para mostrar qué paso va primero. Trabaja un paso a la vez y comprueba que tu respuesta tenga sentido."
+              },
+              lessons: [
+                { n: 18, title: { en: "Compare and evaluate expressions with parentheses.", es: "Comparar y evaluar expresiones con paréntesis." } },
+                { n: 19, title: { en: "Create and solve one-step word problems involving fractions.", es: "Crear y resolver problemas de un paso con fracciones." } },
+                { n: 20, title: { en: "Solve multi-step word problems involving fractions and write equations with parentheses.", es: "Resolver problemas de varios pasos con fracciones y escribir ecuaciones con paréntesis." } },
+                { n: 21, title: { en: "Solve multi-step word problems involving fractions.", es: "Resolver problemas de varios pasos con fracciones." } },
+                { n: 22, title: { en: "Evaluate expressions involving nested grouping symbols. (Optional)", es: "Evaluar expresiones con símbolos de agrupación anidados. (Opcional)" } }
+              ],
+              vocab: [
+                { en: "parentheses", es: "paréntesis", example: "(1/2 + 1/4) × 8" },
+                { en: "expression", es: "expresión", example: "3 × (1/2 + 1/4)" },
+                { en: "equation", es: "ecuación", example: "10 = 2 × 5" },
+                { en: "tape diagram", es: "diagrama de cinta", example: "Boxes in a row that show amounts" },
+                { en: "grouping symbols", es: "símbolos de agrupación", example: "Parentheses, brackets, and braces" }
+              ],
+              example: {
+                problem: { en: "Toby spends 2/5 of his money on movie tickets. He spends 1/3 of the remaining money on popcorn. He has $10 left. How much money did Toby have to begin with?", es: "Toby gasta 2/5 de su dinero en boletos de cine. Gasta 1/3 del dinero que le queda en palomitas. Le quedan $10. ¿Con cuánto dinero empezó Toby?" },
+                steps: [
+                  { en: "Draw 5 equal units for all of Toby's money. Tickets use 2 units. 3 units remain.", es: "Dibuja 5 unidades iguales para todo el dinero de Toby. Los boletos usan 2 unidades. Quedan 3 unidades." },
+                  { en: "Popcorn uses 1/3 of the 3 remaining units. That is 1 unit. 2 units are left.", es: "Las palomitas usan 1/3 de las 3 unidades que quedan. Es 1 unidad. Quedan 2 unidades." },
+                  { en: "2 units are $10, so 1 unit is $5.", es: "2 unidades son $10, así que 1 unidad es $5." },
+                  { en: "All 5 units: 5 × $5 = $25.", es: "Las 5 unidades: 5 × $5 = $25." }
+                ],
+                answer: { en: "$25", es: "$25" }
+              },
+              video: "", slides: "", family: ""
+            }
+          ]
         },
         {
           number: 4,
@@ -480,7 +615,175 @@ window.CONTENT = {
             { en: "tenths", es: "décimos", example: "0.3 is 3 tenths." },
             { en: "hundredths", es: "centésimos", example: "0.07 is 7 hundredths." }
           ],
-          slides: "", assessments: [], topics: []
+          slides: "", assessments: [],
+          // Topic names and lessons are from the Eureka Math² Teacher Edition. TODO: add video and slide links for each topic.
+          // TODO(es): have a Spanish speaker check the Spanish in these topics.
+          topics: [
+            {
+              letter: "A",
+              title: { en: "Understanding Decimal Numbers with Place Value and Fraction Thinking", es: "Comprensión de los números decimales con el valor posicional y el pensamiento fraccionario" },
+              bigIdea: {
+                en: "Decimal places continue to the right of the ones place: tenths, hundredths, thousandths. Each place is 10 times as much as the place to its right. We use place value to read, compare, and round decimals.",
+                es: "Los lugares decimales continúan a la derecha del lugar de las unidades: décimos, centésimos, milésimos. Cada lugar vale 10 veces más que el lugar de su derecha. Usamos el valor posicional para leer, comparar y redondear decimales."
+              },
+              lessons: [
+                { n: 1, title: { en: "Model and relate decimal place value units to thousandths.", es: "Modelar y relacionar las unidades de valor posicional decimal hasta los milésimos." } },
+                { n: 2, title: { en: "Represent thousandths as a place value unit.", es: "Representar los milésimos como una unidad de valor posicional." } },
+                { n: 3, title: { en: "Represent decimal numbers to the thousandths place in different forms.", es: "Representar números decimales hasta los milésimos de diferentes formas." } },
+                { n: 4, title: { en: "Relate the values of digits in a decimal number by using place value understanding.", es: "Relacionar los valores de los dígitos de un número decimal usando el valor posicional." } },
+                { n: 5, title: { en: "Multiply and divide decimal numbers by powers of 10.", es: "Multiplicar y dividir números decimales por potencias de 10." } },
+                { n: 6, title: { en: "Compare decimal numbers to the thousandths place.", es: "Comparar números decimales hasta los milésimos." } },
+                { n: 7, title: { en: "Round decimal numbers to the nearest one, tenth, or hundredth.", es: "Redondear números decimales a la unidad, el décimo o el centésimo más cercano." } },
+                { n: 8, title: { en: "Round decimal numbers to any place value unit.", es: "Redondear números decimales a cualquier unidad de valor posicional." } }
+              ],
+              vocab: [
+                { en: "tenths", es: "décimos", example: "0.3 is 3 tenths." },
+                { en: "hundredths", es: "centésimos", example: "0.07 is 7 hundredths." },
+                { en: "thousandths", es: "milésimos", example: "0.016 is 16 thousandths." },
+                { en: "decimal point", es: "punto decimal", example: "The dot in 2.5" },
+                { en: "round", es: "redondear", example: "2.47 rounds to 2.5." },
+                { en: "compare", es: "comparar", example: "0.35 > 0.305" }
+              ],
+              example: {
+                problem: { en: "Write sixteen thousandths as a decimal number.", es: "Escribe dieciséis milésimos como número decimal." },
+                steps: [
+                  { en: "16 thousandths is 1 hundredth and 6 thousandths.", es: "16 milésimos son 1 centésimo y 6 milésimos." },
+                  { en: "Put 0 in the ones place and 0 in the tenths place.", es: "Pon 0 en el lugar de las unidades y 0 en el lugar de los décimos." },
+                  { en: "Write 1 in the hundredths place and 6 in the thousandths place: 0.016.", es: "Escribe 1 en el lugar de los centésimos y 6 en el de los milésimos: 0.016." }
+                ],
+                answer: { en: "0.016", es: "0.016" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "B",
+              title: { en: "Addition and Subtraction of Decimal Numbers", es: "Suma y resta de números decimales" },
+              bigIdea: {
+                en: "Add and subtract decimals the way you add and subtract whole numbers. Line up the places: ones with ones, tenths with tenths, hundredths with hundredths. Then add or subtract each place, and bundle or unbundle when you need to.",
+                es: "Suma y resta decimales como sumas y restas números enteros. Alinea los lugares: unidades con unidades, décimos con décimos, centésimos con centésimos. Después suma o resta cada lugar, y agrupa o desagrupa cuando lo necesites."
+              },
+              lessons: [
+                { n: 9, title: { en: "Add decimal numbers by using different methods.", es: "Sumar números decimales usando diferentes métodos." } },
+                { n: 10, title: { en: "Add decimal numbers by using place value understanding.", es: "Sumar números decimales usando el valor posicional." } },
+                { n: 11, title: { en: "Subtract decimal numbers by using different methods.", es: "Restar números decimales usando diferentes métodos." } },
+                { n: 12, title: { en: "Subtract decimal numbers by using place value understanding.", es: "Restar números decimales usando el valor posicional." } },
+                { n: 13, title: { en: "Solve word problems involving addition and subtraction of decimal numbers and fractions.", es: "Resolver problemas con palabras que incluyen suma y resta de números decimales y fracciones." } }
+              ],
+              vocab: [
+                { en: "place value", es: "valor posicional", example: "In 2.35, the 3 is in the tenths place." },
+                { en: "decimal point", es: "punto decimal", example: "Line up the decimal points." },
+                { en: "bundle", es: "agrupar", example: "10 hundredths bundle into 1 tenth." },
+                { en: "sum", es: "suma", example: "The answer to an addition problem" },
+                { en: "difference", es: "diferencia", example: "The answer to a subtraction problem" }
+              ],
+              example: {
+                problem: { en: "What is 2.35 + 1.8?", es: "¿Cuánto es 2.35 + 1.8?" },
+                steps: [
+                  { en: "Line up the decimal points. Write 1.8 as 1.80.", es: "Alinea los puntos decimales. Escribe 1.8 como 1.80." },
+                  { en: "Add the hundredths: 5 + 0 = 5. Add the tenths: 3 + 8 = 11 tenths. Bundle 10 tenths into 1 one.", es: "Suma los centésimos: 5 + 0 = 5. Suma los décimos: 3 + 8 = 11 décimos. Agrupa 10 décimos en 1 unidad." },
+                  { en: "Add the ones: 2 + 1 + 1 = 4. The answer is 4.15.", es: "Suma las unidades: 2 + 1 + 1 = 4. La respuesta es 4.15." }
+                ],
+                answer: { en: "4.15", es: "4.15" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "C",
+              title: { en: "Multiplication of Decimal Numbers", es: "Multiplicación de números decimales" },
+              bigIdea: {
+                en: "Think in units. 0.4 is 4 tenths. 6 groups of 4 tenths is 24 tenths. Multiply like whole numbers, then use place value to name the units. To multiply two decimals, you can rename them as fractions.",
+                es: "Piensa en unidades. 0.4 son 4 décimos. 6 grupos de 4 décimos son 24 décimos. Multiplica como con números enteros y después usa el valor posicional para nombrar las unidades. Para multiplicar dos decimales, puedes cambiarlos a fracciones."
+              },
+              lessons: [
+                { n: 14, title: { en: "Multiply decimal numbers to hundredths by one-digit whole numbers by using different models.", es: "Multiplicar números decimales hasta los centésimos por números enteros de un dígito usando diferentes modelos." } },
+                { n: 15, title: { en: "Multiply decimal numbers to hundredths by one-digit whole numbers and multiples of 10, 100, or 1,000 by using different written methods.", es: "Multiplicar números decimales hasta los centésimos por números enteros de un dígito y múltiplos de 10, 100 o 1,000 usando diferentes métodos escritos." } },
+                { n: 16, title: { en: "Multiply decimal numbers to hundredths by two-digit whole numbers by using area models and vertical form.", es: "Multiplicar números decimales hasta los centésimos por números enteros de dos dígitos usando modelos de área y forma vertical." } },
+                { n: 17, title: { en: "Multiply decimal numbers to hundredths by two-digit whole numbers by using different methods.", es: "Multiplicar números decimales hasta los centésimos por números enteros de dos dígitos usando diferentes métodos." } },
+                { n: 18, title: { en: "Relate decimal-number multiplication to fraction multiplication.", es: "Relacionar la multiplicación de números decimales con la multiplicación de fracciones." } },
+                { n: 19, title: { en: "Multiply a decimal number by a decimal number.", es: "Multiplicar un número decimal por un número decimal." } }
+              ],
+              vocab: [
+                { en: "unit form", es: "forma de unidades", example: "0.4 = 4 tenths" },
+                { en: "area model", es: "modelo de área", example: "A rectangle split into parts" },
+                { en: "partial products", es: "productos parciales", example: "Products of each part" },
+                { en: "product", es: "producto", example: "The answer to a multiplication problem" }
+              ],
+              example: {
+                problem: { en: "What is 0.4 × 6?", es: "¿Cuánto es 0.4 × 6?" },
+                steps: [
+                  { en: "0.4 is 4 tenths.", es: "0.4 son 4 décimos." },
+                  { en: "6 groups of 4 tenths is 6 × 4 = 24 tenths.", es: "6 grupos de 4 décimos son 6 × 4 = 24 décimos." },
+                  { en: "24 tenths is 2 ones and 4 tenths: 2.4.", es: "24 décimos son 2 unidades y 4 décimos: 2.4." }
+                ],
+                answer: { en: "2.4", es: "2.4" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "D",
+              title: { en: "Division of Decimal Numbers", es: "División de números decimales" },
+              bigIdea: {
+                en: "Use unit form. 4.8 is 48 tenths. Divide 48 tenths by 6 to get 8 tenths. Then write the answer as a decimal. Dividing by 0.1 or 0.01 is like dividing by a unit fraction: it asks how many tenths or hundredths fit.",
+                es: "Usa la forma de unidades. 4.8 son 48 décimos. Divide 48 décimos entre 6 y obtienes 8 décimos. Después escribe la respuesta como decimal. Dividir entre 0.1 o 0.01 es como dividir entre una fracción unitaria: pregunta cuántos décimos o centésimos caben."
+              },
+              lessons: [
+                { n: 20, title: { en: "Divide decimal numbers to hundredths by one-digit whole numbers and multiples of 10, 100, or 1,000 by using unit form and place value understanding.", es: "Dividir números decimales hasta los centésimos entre números enteros de un dígito y múltiplos de 10, 100 o 1,000 usando la forma de unidades y el valor posicional." } },
+                { n: 21, title: { en: "Divide decimal numbers to hundredths by one-digit whole numbers and multiples of 10, 100, or 1,000 by using place value understanding and vertical form.", es: "Dividir números decimales hasta los centésimos entre números enteros de un dígito y múltiplos de 10, 100 o 1,000 usando el valor posicional y la forma vertical." } },
+                { n: 22, title: { en: "Divide decimal numbers to hundredths by two-digit whole numbers.", es: "Dividir números decimales hasta los centésimos entre números enteros de dos dígitos." } },
+                { n: 23, title: { en: "Relate division by 0.1 and 0.01 to division by a unit fraction.", es: "Relacionar la división entre 0.1 y 0.01 con la división entre una fracción unitaria." } },
+                { n: 24, title: { en: "Divide decimal numbers by decimal numbers, resulting in whole-number quotients.", es: "Dividir números decimales entre números decimales con cocientes que son números enteros." } },
+                { n: 25, title: { en: "Divide decimal numbers by decimal numbers, resulting in decimal-number quotients.", es: "Dividir números decimales entre números decimales con cocientes que son números decimales." } }
+              ],
+              vocab: [
+                { en: "dividend", es: "dividendo", example: "In 4.8 ÷ 6, the dividend is 4.8." },
+                { en: "divisor", es: "divisor", example: "In 4.8 ÷ 6, the divisor is 6." },
+                { en: "quotient", es: "cociente", example: "The answer to a division problem" },
+                { en: "unit form", es: "forma de unidades", example: "4.8 = 48 tenths" }
+              ],
+              example: {
+                problem: { en: "What is 4.8 ÷ 6?", es: "¿Cuánto es 4.8 ÷ 6?" },
+                steps: [
+                  { en: "Write 4.8 in unit form: 48 tenths.", es: "Escribe 4.8 en forma de unidades: 48 décimos." },
+                  { en: "48 tenths ÷ 6 = 8 tenths.", es: "48 décimos ÷ 6 = 8 décimos." },
+                  { en: "8 tenths is 0.8.", es: "8 décimos es 0.8." }
+                ],
+                answer: { en: "0.8", es: "0.8" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "E",
+              title: { en: "Applications of Decimals", es: "Aplicaciones de los decimales" },
+              bigIdea: {
+                en: "Use decimals in real life. To change a metric unit, multiply or divide by a power of 10, like 1,000. To change a customary unit, use the fact that relates the two units. Tape diagrams help us write and understand expressions.",
+                es: "Usa los decimales en la vida real. Para cambiar una unidad métrica, multiplica o divide por una potencia de 10, como 1,000. Para cambiar una unidad usual, usa el dato que relaciona las dos unidades. Los diagramas de cinta nos ayudan a escribir y entender expresiones."
+              },
+              lessons: [
+                { n: 26, title: { en: "Solve a real-world problem involving metric measurements. (Optional)", es: "Resolver un problema de la vida real con medidas métricas. (Opcional)" } },
+                { n: 27, title: { en: "Convert metric measurements involving decimals.", es: "Convertir medidas métricas con decimales." } },
+                { n: 28, title: { en: "Convert customary measurements involving decimals.", es: "Convertir medidas usuales con decimales." } },
+                { n: 29, title: { en: "Interpret, evaluate, and compare numerical expressions involving decimals.", es: "Interpretar, evaluar y comparar expresiones numéricas con decimales." } },
+                { n: 30, title: { en: "Create and solve real-world problems for given numerical expressions involving decimals.", es: "Crear y resolver problemas de la vida real a partir de expresiones numéricas con decimales." } }
+              ],
+              vocab: [
+                { en: "convert", es: "convertir", example: "2.5 km = 2,500 m" },
+                { en: "metric unit", es: "unidad métrica", example: "Meter, gram, liter" },
+                { en: "customary unit", es: "unidad usual", example: "Foot, pound, gallon" },
+                { en: "expression", es: "expresión", example: "3 × (1.5 + 0.5)" },
+                { en: "tape diagram", es: "diagrama de cinta", example: "Boxes in a row that show amounts" }
+              ],
+              example: {
+                problem: { en: "How many meters are in 2.5 kilometers?", es: "¿Cuántos metros hay en 2.5 kilómetros?" },
+                steps: [
+                  { en: "1 kilometer is 1,000 meters.", es: "1 kilómetro son 1,000 metros." },
+                  { en: "Multiply: 2.5 × 1,000.", es: "Multiplica: 2.5 × 1,000." },
+                  { en: "Each × 10 shifts the digits one place left. 2.5 becomes 2,500.", es: "Cada × 10 mueve los dígitos un lugar a la izquierda. 2.5 se convierte en 2,500." }
+                ],
+                answer: { en: "2,500 meters", es: "2,500 metros" }
+              },
+              video: "", slides: "", family: ""
+            }
+          ]
         },
         {
           number: 5,
