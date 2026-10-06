@@ -369,7 +369,7 @@ select, input[type="number"] {
 select { min-width: 12rem; }
 
 .table-wrap { max-width: 100%; overflow-x: auto; }
-table { border-collapse: collapse; width: 100%; max-width: 44rem; background: var(--white); border: 1px solid var(--rule); }
+table { border-collapse: collapse; width: calc(100% - 1px); max-width: 44rem; background: var(--white); border: 1px solid var(--rule); }
 caption { text-align: left; font-weight: 700; padding: 0.4rem 0; caption-side: top; }
 th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--rule); }
 th { background: var(--mist); font-weight: 700; }
