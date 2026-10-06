@@ -158,111 +158,149 @@ window.CONTENT = {
           },
           vocab: [
             { en: "place value", es: "valor posicional", example: "In 352, the 5 is worth 50." },
+            { en: "power of 10", es: "potencia de 10", example: "10, 100, 1,000" },
             { en: "exponent", es: "exponente", example: "10³ = 10 × 10 × 10" },
-            { en: "product", es: "producto", example: "6 × 4 = 24" }
+            { en: "dividend", es: "dividendo", example: "In 926 ÷ 23, the dividend is 926." },
+            { en: "quotient", es: "cociente", example: "The answer to a division problem" },
+            { en: "expression", es: "expresión", example: "3 × (15 + 25)" }
           ],
           slides: "",
           assessments: [
             { date: "2026-09-29", title: { en: "Module 1 assessment", es: "Evaluación del módulo 1" } }
           ],
-          // DRAFT: topic names, big ideas, and examples are drafted from your lesson plans. TODO: check each topic name and letter against your teacher edition, and add video and slide links.
+          // Topic names and lessons are from the Eureka Math² Teacher Edition. TODO: add video and slide links for each topic.
           // TODO(es): have a Spanish speaker check the Spanish in these topics.
           topics: [
             {
               letter: "A",
-              title: { en: "Place value, powers of 10, and measurement", es: "Valor posicional, potencias de 10 y medidas" },
+              title: { en: "Place Value Understanding for Whole Numbers", es: "Comprensión del valor posicional de números enteros" },
               bigIdea: {
-                en: "Each place is worth 10 times the place to its right. When you multiply or divide by 10, 100, or 1,000, the digits shift. We use that to change one unit to another, like kilometers to meters.",
-                es: "Cada lugar vale 10 veces más que el lugar de su derecha. Cuando multiplicas o divides por 10, 100 o 1,000, los dígitos se mueven. Lo usamos para cambiar una unidad por otra, como kilómetros a metros."
+                en: "Each place is worth 10 times the place to its right. When you multiply by 10, 100, or 1,000, the digits shift to the left. When you divide, they shift to the right. We use this to estimate and to change metric units.",
+                es: "Cada lugar vale 10 veces más que el lugar de su derecha. Cuando multiplicas por 10, 100 o 1,000, los dígitos se mueven a la izquierda. Cuando divides, se mueven a la derecha. Lo usamos para estimar y para cambiar unidades métricas."
               },
+              lessons: [
+                { n: 1, title: { en: "Relate adjacent place value units by using place value understanding.", es: "Relacionar unidades de valor posicional adyacentes usando el valor posicional." } },
+                { n: 2, title: { en: "Multiply and divide by 10, 100, and 1,000 and identify patterns in the products and quotients.", es: "Multiplicar y dividir por 10, 100 y 1,000 e identificar patrones en los productos y cocientes." } },
+                { n: 3, title: { en: "Use exponents to multiply and divide by powers of 10.", es: "Usar exponentes para multiplicar y dividir por potencias de 10." } },
+                { n: 4, title: { en: "Estimate products and quotients by using powers of 10 and their multiples.", es: "Estimar productos y cocientes usando potencias de 10 y sus múltiplos." } },
+                { n: 5, title: { en: "Convert measurements and describe relationships between metric units.", es: "Convertir medidas y describir las relaciones entre unidades métricas." } },
+                { n: 6, title: { en: "Solve multi-step word problems by using metric measurement conversion.", es: "Resolver problemas de varios pasos usando la conversión de medidas métricas." } }
+              ],
               vocab: [
-                { en: "place value", es: "valor posicional", example: "In 4,052, the 4 is worth 4,000." },
+                { en: "place value", es: "valor posicional", example: "In 1,731,225, the 7 is worth 700,000." },
                 { en: "power of 10", es: "potencia de 10", example: "10, 100, 1,000" },
-                { en: "convert", es: "convertir", example: "Change 3 km to 3,000 m." },
-                { en: "kilometer", es: "kilómetro", example: "1 km = 1,000 m" }
+                { en: "exponent", es: "exponente", example: "In 10³, the exponent is 3." },
+                { en: "exponential form", es: "forma exponencial", example: "1,000 = 10³" },
+                { en: "milligram", es: "miligramo", example: "1,000 mg = 1 g" },
+                { en: "kiloliter", es: "kilolitro", example: "1 kL = 1,000 L" },
+                { en: "centiliter", es: "centilitro", example: "100 cL = 1 L" },
+                { en: "millimeter", es: "milímetro", example: "10 mm = 1 cm" }
               ],
               example: {
-                problem: { en: "How many meters are in 7 kilometers?", es: "¿Cuántos metros hay en 7 kilómetros?" },
+                problem: { en: "What is 50 × 1,000?", es: "¿Cuánto es 50 × 1,000?" },
                 steps: [
-                  { en: "1 kilometer is 1,000 meters.", es: "1 kilómetro son 1,000 metros." },
-                  { en: "7 kilometers is 7 groups of 1,000 meters.", es: "7 kilómetros son 7 grupos de 1,000 metros." },
-                  { en: "7 × 1,000 = 7,000.", es: "7 × 1,000 = 7,000." }
+                  { en: "1,000 is 10 × 10 × 10. So 50 × 1,000 = 50 × 10 × 10 × 10.", es: "1,000 es 10 × 10 × 10. Entonces 50 × 1,000 = 50 × 10 × 10 × 10." },
+                  { en: "Write it with an exponent: 50 × 10³.", es: "Escríbelo con un exponente: 50 × 10³." },
+                  { en: "Each × 10 shifts the digits one place to the left. 50 becomes 50,000.", es: "Cada × 10 mueve los dígitos un lugar a la izquierda. 50 se convierte en 50,000." }
                 ],
-                answer: { en: "7,000 meters", es: "7,000 metros" }
+                answer: { en: "50,000", es: "50,000" }
               },
               video: "", slides: "", family: ""
             },
             {
               letter: "B",
-              title: { en: "Multiply multi-digit numbers", es: "Multiplicar números de varios dígitos" },
+              title: { en: "Multiplication of Whole Numbers", es: "Multiplicación de números enteros" },
               bigIdea: {
-                en: "Break a big number into parts. Multiply each part. Then add the parts back together. An area model shows the parts as a rectangle.",
-                es: "Separa un número grande en partes. Multiplica cada parte. Después suma todas las partes. Un modelo de área muestra las partes como un rectángulo."
+                en: "Break a number into place value parts. Multiply each part. Add the partial products. The standard algorithm does the same thing, one digit at a time. An area model shows why it works.",
+                es: "Separa un número en partes según el valor posicional. Multiplica cada parte. Suma los productos parciales. El algoritmo convencional hace lo mismo, un dígito a la vez. Un modelo de área muestra por qué funciona."
               },
+              lessons: [
+                { n: 7, title: { en: "Multiply by using familiar methods.", es: "Multiplicar usando métodos conocidos." } },
+                { n: 8, title: { en: "Multiply two- and three-digit numbers by two-digit numbers by using the distributive property.", es: "Multiplicar números de dos y tres dígitos por números de dos dígitos usando la propiedad distributiva." } },
+                { n: 9, title: { en: "Multiply two- and three-digit numbers by two-digit numbers by using the standard algorithm.", es: "Multiplicar números de dos y tres dígitos por números de dos dígitos usando el algoritmo convencional." } },
+                { n: 10, title: { en: "Multiply three- and four-digit numbers by three-digit numbers by using the standard algorithm.", es: "Multiplicar números de tres y cuatro dígitos por números de tres dígitos usando el algoritmo convencional." } },
+                { n: 11, title: { en: "Multiply two multi-digit numbers by using the standard algorithm.", es: "Multiplicar dos números de varios dígitos usando el algoritmo convencional." } }
+              ],
               vocab: [
                 { en: "area model", es: "modelo de área", example: "A rectangle split into parts" },
                 { en: "partial products", es: "productos parciales", example: "20 × 14 and 3 × 14" },
                 { en: "standard algorithm", es: "algoritmo convencional", example: "Stacking the numbers to multiply" },
-                { en: "product", es: "producto", example: "6 × 4 = 24" }
+                { en: "distributive property", es: "propiedad distributiva", example: "4 × 13 = (4 × 10) + (4 × 3)" },
+                { en: "factor", es: "factor", example: "In 6 × 4 = 24, the factors are 6 and 4." }
               ],
               example: {
-                problem: { en: "What is 23 × 14?", es: "¿Cuánto es 23 × 14?" },
+                problem: { en: "What is 427 × 52?", es: "¿Cuánto es 427 × 52?" },
                 steps: [
-                  { en: "Break 23 into 20 and 3.", es: "Separa 23 en 20 y 3." },
-                  { en: "20 × 14 = 280.", es: "20 × 14 = 280." },
-                  { en: "3 × 14 = 42.", es: "3 × 14 = 42." },
-                  { en: "Add the parts: 280 + 42 = 322.", es: "Suma las partes: 280 + 42 = 322." }
+                  { en: "Break 52 into 50 and 2.", es: "Separa 52 en 50 y 2." },
+                  { en: "427 × 2 = 854.", es: "427 × 2 = 854." },
+                  { en: "427 × 50 = 21,350.", es: "427 × 50 = 21,350." },
+                  { en: "Add the partial products: 854 + 21,350 = 22,204.", es: "Suma los productos parciales: 854 + 21,350 = 22,204." }
                 ],
-                answer: { en: "322", es: "322" }
+                answer: { en: "22,204", es: "22,204" }
               },
               video: "", slides: "", family: ""
             },
             {
               letter: "C",
-              title: { en: "Divide multi-digit numbers", es: "Dividir números de varios dígitos" },
+              title: { en: "Division of Whole Numbers", es: "División de números enteros" },
               bigIdea: {
-                en: "Division asks how many groups fit. Take out easy chunks first, like 10 groups or 30 groups. Keep going until nothing is left. Check with multiplication.",
-                es: "La división pregunta cuántos grupos caben. Saca primero partes fáciles, como 10 grupos o 30 grupos. Sigue hasta que no quede nada. Comprueba con la multiplicación."
+                en: "Estimate first. Then find how many groups of the divisor fit in the dividend. You can take out friendly chunks, called partial quotients, and add them up. Check with multiplication.",
+                es: "Primero estima. Después halla cuántos grupos del divisor caben en el dividendo. Puedes sacar partes fáciles, llamadas cocientes parciales, y sumarlas. Comprueba con la multiplicación."
               },
+              lessons: [
+                { n: 12, title: { en: "Divide two- and three-digit numbers by multiples of 10.", es: "Dividir números de dos y tres dígitos entre múltiplos de 10." } },
+                { n: 13, title: { en: "Divide two-digit numbers by two-digit numbers in problems that result in one-digit quotients.", es: "Dividir números de dos dígitos entre números de dos dígitos en problemas con cocientes de un dígito." } },
+                { n: 14, title: { en: "Divide three-digit numbers by two-digit numbers in problems that result in one-digit quotients.", es: "Dividir números de tres dígitos entre números de dos dígitos en problemas con cocientes de un dígito." } },
+                { n: 15, title: { en: "Divide three-digit numbers by two-digit numbers in problems that result in two-digit quotients.", es: "Dividir números de tres dígitos entre números de dos dígitos en problemas con cocientes de dos dígitos." } },
+                { n: 16, title: { en: "Divide four-digit numbers by two-digit numbers.", es: "Dividir números de cuatro dígitos entre números de dos dígitos." } }
+              ],
               vocab: [
-                { en: "dividend", es: "dividendo", example: "In 468 ÷ 12, the dividend is 468." },
-                { en: "divisor", es: "divisor", example: "In 468 ÷ 12, the divisor is 12." },
+                { en: "dividend", es: "dividendo", example: "In 926 ÷ 23, the dividend is 926." },
+                { en: "divisor", es: "divisor", example: "In 926 ÷ 23, the divisor is 23." },
                 { en: "quotient", es: "cociente", example: "The answer to a division problem" },
-                { en: "remainder", es: "residuo", example: "What is left over" }
+                { en: "remainder", es: "residuo", example: "What is left over" },
+                { en: "partial quotient", es: "cociente parcial", example: "30 + 10 = 40 groups" }
               ],
               example: {
-                problem: { en: "What is 468 ÷ 12?", es: "¿Cuánto es 468 ÷ 12?" },
+                problem: { en: "What is 926 ÷ 23?", es: "¿Cuánto es 926 ÷ 23?" },
                 steps: [
-                  { en: "Try 30 groups of 12: 30 × 12 = 360.", es: "Prueba con 30 grupos de 12: 30 × 12 = 360." },
-                  { en: "468 − 360 = 108 is left.", es: "468 − 360 = 108 es lo que queda." },
-                  { en: "9 groups of 12 is 108. Nothing is left.", es: "9 grupos de 12 son 108. No queda nada." },
-                  { en: "30 + 9 = 39 groups.", es: "30 + 9 = 39 grupos." }
+                  { en: "Estimate: 900 ÷ 30 = 30. The answer is close to 30.", es: "Estima: 900 ÷ 30 = 30. La respuesta está cerca de 30." },
+                  { en: "Take out 30 groups of 23: 30 × 23 = 690. Then 10 groups: 10 × 23 = 230.", es: "Saca 30 grupos de 23: 30 × 23 = 690. Después 10 grupos: 10 × 23 = 230." },
+                  { en: "690 + 230 = 920. And 926 − 920 = 6 is left.", es: "690 + 230 = 920. Y 926 − 920 = 6 es lo que queda." },
+                  { en: "30 + 10 = 40 groups.", es: "30 + 10 = 40 grupos." }
                 ],
-                answer: { en: "39", es: "39" }
+                answer: { en: "40 R 6 (40 with a remainder of 6)", es: "40 R 6 (40 con residuo 6)" }
               },
               video: "", slides: "", family: ""
             },
             {
               letter: "D",
-              title: { en: "Expressions and word problems", es: "Expresiones y problemas con palabras" },
+              title: { en: "Multi-Step Problems with Whole Numbers", es: "Problemas de varios pasos con números enteros" },
               bigIdea: {
-                en: "An expression is a math phrase with no equals sign. Read the problem. Draw a tape diagram. Then write an expression and solve.",
-                es: "Una expresión es una frase matemática sin signo de igual. Lee el problema. Dibuja un diagrama de cinta. Después escribe una expresión y resuélvela."
+                en: "Read the problem. Draw a tape diagram. Write an expression that matches it. Parentheses show which step comes first, so they can change the answer. Then solve and check that your answer makes sense.",
+                es: "Lee el problema. Dibuja un diagrama de cinta. Escribe una expresión que coincida. Los paréntesis muestran qué paso va primero, así que pueden cambiar la respuesta. Después resuelve y comprueba que tu respuesta tenga sentido."
               },
+              lessons: [
+                { n: 17, title: { en: "Write, interpret, and compare numerical expressions.", es: "Escribir, interpretar y comparar expresiones numéricas." } },
+                { n: 18, title: { en: "Create and solve real-world problems for given numerical expressions.", es: "Crear y resolver problemas de la vida real a partir de expresiones numéricas dadas." } },
+                { n: 19, title: { en: "Solve multi-step word problems involving multiplication and division.", es: "Resolver problemas de varios pasos con multiplicación y división." } },
+                { n: 20, title: { en: "Solve multi-step word problems involving the four operations.", es: "Resolver problemas de varios pasos con las cuatro operaciones." } }
+              ],
               vocab: [
-                { en: "expression", es: "expresión", example: "(6 × 24) − 18" },
-                { en: "parentheses", es: "paréntesis", example: "(2 + 3) × 4" },
+                { en: "numerical expression", es: "expresión numérica", example: "3 × (15 + 25)" },
+                { en: "parentheses", es: "paréntesis", example: "(26 − 8) ÷ 2" },
                 { en: "tape diagram", es: "diagrama de cinta", example: "Boxes in a row that show amounts" },
-                { en: "evaluate", es: "evaluar", example: "Find the value of an expression." }
+                { en: "evaluate", es: "evaluar", example: "Find the value of an expression." },
+                { en: "Read, Draw, Write", es: "Leer, Dibujar, Escribir", example: "The steps for solving a word problem" }
               ],
               example: {
-                problem: { en: "A teacher has 6 boxes with 24 markers in each. 18 markers are broken. How many markers work?", es: "Una maestra tiene 6 cajas con 24 marcadores en cada una. 18 marcadores están dañados. ¿Cuántos marcadores sirven?" },
+                problem: { en: "There are 26 people at the park. 8 people go home. The rest make 2 equal groups to play a game. How many people are in each group?", es: "Hay 26 personas en el parque. 8 personas se van a casa. Las demás forman 2 grupos iguales para jugar. ¿Cuántas personas hay en cada grupo?" },
                 steps: [
-                  { en: "Read. Draw 6 boxes of 24 markers.", es: "Lee. Dibuja 6 cajas de 24 marcadores." },
-                  { en: "Write an expression: (6 × 24) − 18.", es: "Escribe una expresión: (6 × 24) − 18." },
-                  { en: "6 × 24 = 144. Then 144 − 18 = 126.", es: "6 × 24 = 144. Después 144 − 18 = 126." }
+                  { en: "Read. Draw a tape diagram: 26 people, take away 8, then split the rest into 2 groups.", es: "Lee. Dibuja un diagrama de cinta: 26 personas, quita 8, y reparte las que quedan en 2 grupos." },
+                  { en: "Write an expression: (26 − 8) ÷ 2.", es: "Escribe una expresión: (26 − 8) ÷ 2." },
+                  { en: "26 − 8 = 18. Then 18 ÷ 2 = 9.", es: "26 − 8 = 18. Después 18 ÷ 2 = 9." }
                 ],
-                answer: { en: "126 markers", es: "126 marcadores" }
+                answer: { en: "9 people in each group", es: "9 personas en cada grupo" }
               },
               video: "", slides: "", family: ""
             }
@@ -287,69 +325,93 @@ window.CONTENT = {
             { date: "2026-10-09", title: { en: "Topic A quiz", es: "Prueba del tema A" } },
             { date: "2026-11-19", title: { en: "Module 2 assessment", es: "Evaluación del módulo 2" } }
           ],
+          // Topic names and lessons are from the Eureka Math² Teacher Edition. TODO: add video and slide links for each topic.
+          // TODO(es): have a Spanish speaker check the Spanish in these topics.
           topics: [
-            // TODO: match topic names and letters to your Eureka Math² teacher edition.
             {
               letter: "A",
-              title: { en: "Fractions as division", es: "Fracciones como división" },
+              title: { en: "Fractions and Division", es: "Fracciones y división" },
               bigIdea: {
-                en: "A fraction is a division problem. 3/4 means 3 divided by 4.",
-                es: "Una fracción es una división. 3/4 quiere decir 3 dividido entre 4."
+                en: "A fraction is a division problem. When you share whole things equally, each share can be a fraction. A remainder can be written as a fraction too.",
+                es: "Una fracción es una división. Cuando repartes cosas enteras en partes iguales, cada parte puede ser una fracción. Un residuo también se puede escribir como fracción."
               },
+              lessons: [
+                { n: 1, title: { en: "Interpret a fraction as division.", es: "Interpretar una fracción como una división." } },
+                { n: 2, title: { en: "Interpret a fraction as division by writing remainders as fractions.", es: "Interpretar una fracción como una división escribiendo los residuos como fracciones." } },
+                { n: 3, title: { en: "Represent fractions as division by using models.", es: "Representar fracciones como divisiones usando modelos." } },
+                { n: 4, title: { en: "Solve word problems involving division and fractions.", es: "Resolver problemas con palabras que incluyen división y fracciones." } }
+              ],
               vocab: [
                 { en: "numerator", es: "numerador", example: "The 3 in 3/4" },
                 { en: "denominator", es: "denominador", example: "The 4 in 3/4" },
-                { en: "quotient", es: "cociente", example: "12 ÷ 3 = 4. The quotient is 4." }
+                { en: "quotient", es: "cociente", example: "11 ÷ 4 = 2 3/4" },
+                { en: "remainder", es: "residuo", example: "11 ÷ 4 is 2 with 3 left over." },
+                { en: "equal sharing", es: "reparto equitativo", example: "Sharing so everyone gets the same" }
               ],
               example: {
-                problem: {
-                  en: "4 friends share 3 pizzas equally. How much pizza does each friend get?",
-                  es: "4 amigos comparten 3 pizzas en partes iguales. ¿Cuánta pizza le toca a cada uno?"
-                },
+                problem: { en: "Mr. Evans pours 11 liters of water equally into 4 containers. How many liters are in 1 container?", es: "El Sr. Evans vierte 11 litros de agua en partes iguales en 4 recipientes. ¿Cuántos litros hay en 1 recipiente?" },
                 steps: [
-                  { en: "This is 3 ÷ 4.", es: "Esto es 3 ÷ 4." },
-                  { en: "Draw 3 pizzas. Cut each one into 4 equal slices.", es: "Dibuja 3 pizzas. Corta cada una en 4 partes iguales." },
-                  { en: "Each friend gets 1 slice from each pizza. That's 3 fourths.", es: "Cada amigo recibe 1 parte de cada pizza. Son 3 cuartos." }
+                  { en: "Divide: 11 ÷ 4. Each container gets 2 liters, and 3 liters are left.", es: "Divide: 11 ÷ 4. Cada recipiente recibe 2 litros y sobran 3 litros." },
+                  { en: "Share the 3 leftover liters into 4 equal parts. Each container gets 3/4 of a liter.", es: "Reparte los 3 litros que sobran en 4 partes iguales. Cada recipiente recibe 3/4 de litro." },
+                  { en: "11 ÷ 4 = 2 3/4.", es: "11 ÷ 4 = 2 3/4." }
                 ],
-                answer: { en: "3/4 of a pizza", es: "3/4 de pizza" }
+                answer: { en: "2 3/4 liters", es: "2 3/4 litros" }
               },
               video: "", slides: "", family: ""
             },
             {
               letter: "B",
-              title: { en: "Add and subtract fractions with different denominators", es: "Sumar y restar fracciones con distinto denominador" },
+              title: { en: "Addition and Subtraction of Fractions by Making Like Units", es: "Suma y resta de fracciones formando unidades iguales" },
               bigIdea: {
-                en: "You can only add pieces that are the same size. Rename the fractions so they have the same denominator. Then add.",
-                es: "Solo puedes sumar partes del mismo tamaño. Cambia las fracciones para que tengan el mismo denominador. Después suma."
+                en: "You can only add or subtract pieces that are the same size. If the units are different, rename one or both fractions so they match. Then add or subtract the numerators.",
+                es: "Solo puedes sumar o restar partes del mismo tamaño. Si las unidades son diferentes, cambia una o las dos fracciones para que coincidan. Después suma o resta los numeradores."
               },
+              lessons: [
+                { n: 5, title: { en: "Add and subtract fractions with related units by using pictorial models.", es: "Sumar y restar fracciones con unidades relacionadas usando modelos gráficos." } },
+                { n: 6, title: { en: "Add and subtract fractions with related units by using area models to rename fractions.", es: "Sumar y restar fracciones con unidades relacionadas usando modelos de área para renombrar fracciones." } },
+                { n: 7, title: { en: "Add and subtract fractions with related units by finding equivalent fractions numerically.", es: "Sumar y restar fracciones con unidades relacionadas hallando fracciones equivalentes con números." } },
+                { n: 8, title: { en: "Add and subtract fractions with unrelated units by finding equivalent fractions pictorially.", es: "Sumar y restar fracciones con unidades no relacionadas hallando fracciones equivalentes con modelos gráficos." } },
+                { n: 9, title: { en: "Add and subtract fractions with unrelated units by finding equivalent fractions numerically.", es: "Sumar y restar fracciones con unidades no relacionadas hallando fracciones equivalentes con números." } }
+              ],
               vocab: [
-                { en: "common denominator", es: "denominador común", example: "1/2 and 1/3 can both be sixths." },
-                { en: "equivalent fractions", es: "fracciones equivalentes", example: "1/2 = 3/6" },
-                { en: "unit fraction", es: "fracción unitaria", example: "1/6" }
+                { en: "like units", es: "unidades iguales", example: "3/4 and 2/4 are both fourths." },
+                { en: "related units", es: "unidades relacionadas", example: "Fourths and twelfths" },
+                { en: "unrelated units", es: "unidades no relacionadas", example: "Halves and thirds" },
+                { en: "equivalent fractions", es: "fracciones equivalentes", example: "1/2 = 2/4" },
+                { en: "minuend", es: "minuendo", example: "In 7 − 3, the minuend is 7." },
+                { en: "subtrahend", es: "sustraendo", example: "In 7 − 3, the subtrahend is 3." }
               ],
               example: {
-                problem: { en: "What is 1/2 + 1/3?", es: "¿Cuánto es 1/2 + 1/3?" },
+                problem: { en: "What is 3/4 + 6/12?", es: "¿Cuánto es 3/4 + 6/12?" },
                 steps: [
-                  { en: "Halves and thirds are different sizes. We can't add them yet.", es: "Los medios y los tercios son de distinto tamaño. Todavía no se pueden sumar." },
-                  { en: "Rename both as sixths: 1/2 = 3/6 and 1/3 = 2/6.", es: "Cámbialos a sextos: 1/2 = 3/6 y 1/3 = 2/6." },
-                  { en: "Add the sixths: 3/6 + 2/6 = 5/6.", es: "Suma los sextos: 3/6 + 2/6 = 5/6." }
+                  { en: "Fourths and twelfths are related units. Rename 6/12 as fourths.", es: "Los cuartos y los doceavos son unidades relacionadas. Cambia 6/12 a cuartos." },
+                  { en: "Divide the top and bottom by 3: 6/12 = 2/4.", es: "Divide el numerador y el denominador entre 3: 6/12 = 2/4." },
+                  { en: "3/4 + 2/4 = 5/4, which is 1 1/4.", es: "3/4 + 2/4 = 5/4, que es 1 1/4." }
                 ],
-                answer: { en: "5/6", es: "5/6" }
+                answer: { en: "5/4, or 1 1/4", es: "5/4, o 1 1/4" }
               },
               video: "", slides: "", family: ""
             },
             {
               letter: "C",
-              title: { en: "Add and subtract mixed numbers", es: "Sumar y restar números mixtos" },
+              title: { en: "Addition and Subtraction of Fractions, Whole Numbers, and Mixed Numbers", es: "Suma y resta de fracciones, números enteros y números mixtos" },
               bigIdea: {
-                en: "A mixed number is wholes plus a fraction. Work with the wholes and the fractions, and trade a whole for pieces when you need to.",
-                es: "Un número mixto es enteros más una fracción. Trabaja con los enteros y las fracciones, y cambia un entero por partes cuando lo necesites."
+                en: "A mixed number is wholes plus a fraction. Add or subtract the wholes and the fractions. When you need more pieces, trade one whole for fractions. A number line or the arrow way can show your thinking.",
+                es: "Un número mixto es enteros más una fracción. Suma o resta los enteros y las fracciones. Cuando necesites más partes, cambia un entero por fracciones. Una recta numérica o el método de la flecha pueden mostrar tu razonamiento."
               },
+              lessons: [
+                { n: 10, title: { en: "Add whole numbers and mixed numbers and add mixed numbers with related units.", es: "Sumar números enteros y números mixtos, y sumar números mixtos con unidades relacionadas." } },
+                { n: 11, title: { en: "Add mixed numbers with unrelated units.", es: "Sumar números mixtos con unidades no relacionadas." } },
+                { n: 12, title: { en: "Subtract whole numbers from mixed numbers and mixed numbers from whole numbers.", es: "Restar números enteros de números mixtos y números mixtos de números enteros." } },
+                { n: 13, title: { en: "Subtract mixed numbers from mixed numbers with related units.", es: "Restar números mixtos de números mixtos con unidades relacionadas." } },
+                { n: 14, title: { en: "Subtract mixed numbers from mixed numbers with unrelated units.", es: "Restar números mixtos de números mixtos con unidades no relacionadas." } }
+              ],
               vocab: [
                 { en: "mixed number", es: "número mixto", example: "3 1/4" },
                 { en: "whole", es: "entero", example: "4/4 = 1 whole" },
-                { en: "rename", es: "reagrupar", example: "3 1/4 = 2 5/4" }
-                // TODO(es): check "reagrupar" vs. "volver a escribir" for "rename".
+                { en: "rename", es: "renombrar", example: "3 1/4 = 2 5/4" },
+                { en: "number line", es: "recta numérica", example: "A line with numbers in order" },
+                { en: "the arrow way", es: "el método de la flecha", example: "Adding on in steps with arrows" }
               ],
               example: {
                 problem: { en: "What is 3 1/4 − 1 3/4?", es: "¿Cuánto es 3 1/4 − 1 3/4?" },
@@ -359,6 +421,34 @@ window.CONTENT = {
                   { en: "Subtract the fourths: 5/4 − 3/4 = 2/4.", es: "Resta los cuartos: 5/4 − 3/4 = 2/4." }
                 ],
                 answer: { en: "1 2/4, which is the same as 1 1/2", es: "1 2/4, que es lo mismo que 1 1/2" }
+              },
+              video: "", slides: "", family: ""
+            },
+            {
+              letter: "D",
+              title: { en: "Problem Solving and Line Plots with Fractional Measurements", es: "Resolución de problemas y diagramas de puntos con medidas fraccionarias" },
+              bigIdea: {
+                en: "A line plot shows data on a number line. Pick a scale that fits the smallest and biggest values. Then use the plot to answer questions. To share a total equally, find the sum of all the data, then divide by how many data points there are.",
+                es: "Un diagrama de puntos muestra datos en una recta numérica. Elige una escala que incluya el valor más pequeño y el más grande. Después usa el diagrama para responder preguntas. Para repartir un total en partes iguales, halla la suma de todos los datos y divídela entre la cantidad de datos."
+              },
+              lessons: [
+                { n: 15, title: { en: "Represent data on a line plot.", es: "Representar datos en un diagrama de puntos." } },
+                { n: 16, title: { en: "Solve problems by using data from a line plot.", es: "Resolver problemas usando los datos de un diagrama de puntos." } },
+                { n: 17, title: { en: "Solve problems by equally redistributing a total amount.", es: "Resolver problemas redistribuyendo una cantidad total en partes iguales." } }
+              ],
+              vocab: [
+                { en: "line plot", es: "diagrama de puntos", example: "Xs above a number line" },
+                { en: "data", es: "datos", example: "The measurements we collect" },
+                { en: "scale", es: "escala", example: "How the number line is labeled" },
+                { en: "redistribute", es: "redistribuir", example: "Share a total equally again" }
+              ],
+              example: {
+                problem: { en: "Four plants have heights of 1/4, 1/2, 1/2, and 3/4 foot. If all four were the same height, how tall would each be?", es: "Cuatro plantas miden 1/4, 1/2, 1/2 y 3/4 de pie. Si las cuatro tuvieran la misma altura, ¿cuánto mediría cada una?" },
+                steps: [
+                  { en: "Add all the heights: 1/4 + 1/2 + 1/2 + 3/4 = 2 feet.", es: "Suma todas las alturas: 1/4 + 1/2 + 1/2 + 3/4 = 2 pies." },
+                  { en: "Share the total equally among 4 plants: 2 ÷ 4 = 1/2.", es: "Reparte el total en partes iguales entre las 4 plantas: 2 ÷ 4 = 1/2." }
+                ],
+                answer: { en: "1/2 foot", es: "1/2 pie" }
               },
               video: "", slides: "", family: ""
             }
@@ -1031,6 +1121,8 @@ window.CONTENT = {
       classroom: "Google Classroom",
       comingSoon: "Coming soon",
       roomN: "Room {n}",
+      lessonsLabel: "Lessons",
+      lessonN: "Lesson {n}",
       daySoon: "Classes for this day are coming soon.",
       schoolPolicies: "School policies",
       schoolLinks: "School links",
@@ -1152,6 +1244,8 @@ window.CONTENT = {
       classroom: "Google Classroom",
       comingSoon: "Muy pronto",
       roomN: "Salón {n}",
+      lessonsLabel: "Lecciones",
+      lessonN: "Lección {n}",
       daySoon: "Muy pronto vas a ver aquí las clases de este día.",
       schoolPolicies: "Reglas de la escuela",
       schoolLinks: "Enlaces de la escuela",

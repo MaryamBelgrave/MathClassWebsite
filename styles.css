@@ -476,3 +476,9 @@ tr.is-now td { border-top: 2px solid var(--ink); border-bottom: 2px solid var(--
 .policies > div { padding: 0.6rem 0; border-bottom: 1px solid var(--rule); max-width: var(--measure); }
 .policies dt { font-weight: 700; }
 .policies dd { margin: 0; }
+
+/* Lesson list inside a topic */
+.lessons { list-style: none; margin: 0 0 1rem; padding: 0; }
+.lessons li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.25rem 0.75rem; padding: 0.4rem 0; border-bottom: 1px solid var(--rule); max-width: var(--measure); }
+.lesson-n { font-weight: 700; color: var(--grade-dark); }
+@media (max-width: 30em) { .lessons li { grid-template-columns: 1fr; gap: 0; } }

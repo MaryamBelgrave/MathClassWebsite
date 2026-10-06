@@ -494,6 +494,7 @@
       html += '<article class="topic grade-edge" aria-labelledby="' + id + '">' +
         '<h3 id="' + id + '">' + (has(tp.letter) ? '<span class="topic-letter">' + T('topicN', { n: L(tp.letter) }) + '</span> ' : '') + esc(L(tp.title)) + '</h3>';
       if (has(tp.bigIdea)) html += '<p class="big-idea"><strong>' + T('bigIdea') + ':</strong> ' + esc(L(tp.bigIdea)) + '</p>';
+      html += lessonsBlock(tp.lessons);
       html += vocabBlock(tp.vocab, 'h4');
       html += exampleBlock(tp.example);
       html += '<ul class="link-row">' +
@@ -506,6 +507,15 @@
     });
     html += '</section>';
     return html;
+  }
+
+  // The lessons in a topic, with their numbers, so students can match a lesson to their homework.
+  function lessonsBlock(items) {
+    var ls = arr(items).filter(function (l) { return has(l.title); });
+    if (!ls.length) return '';
+    return '<h4>' + T('lessonsLabel') + '</h4><ul class="lessons">' + ls.map(function (l) {
+      return '<li><span class="lesson-n">' + T('lessonN', { n: l.n }) + '</span><span>' + esc(L(l.title)) + '</span></li>';
+    }).join('') + '</ul>';
   }
 
   function vocabBlock(vocab, hTag) {
